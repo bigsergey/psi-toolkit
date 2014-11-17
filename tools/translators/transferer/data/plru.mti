@@ -1,0 +1,3905 @@
+#!!! TRACE czasownik.m
+
+#
+
+sub FC::default()
+{
+    %Glowa[label() = "#"];
+    %Dop1 [ label() = "dop1" ];
+    %Dop2 [ label() = "dop2" ];
+    %Dop3 [ label() = "dop3" ];
+
+    $podmiot := find(,podmiot);
+    %Podmiot[label() = "podmiot"];
+    # 'чемодан упал' r=>p 'walizka upadła'
+    # 'квартира сгорела' r=>p 'mieszkanie spaliło się'
+    if ($podmiot) {
+        L := $podmiot->L;
+	# 'я писал' r=>p 'pisałem'
+	# 'ты писала' r=>p 'pisałaś'
+	# 'оно писало' r=>p 'pisało'
+	# 'мы писали' r=>p 'pisaliśmy'
+	# 'они писали' r=>p 'pisali'
+	if ($podmiot->R != nil) {
+            R := $podmiot->R;
+	}
+        O := $podmiot->O;
+    }
+    propagate_num();
+    propagate_gender();
+    propagate_person();
+
+    # 'чемодан был велик' r=>p 'walizka była wielka'
+    $pm := %Podmiot;
+    $ofc := this();
+    if($n := $ofc->find("FP",dop1))
+	$ofc->ajcompl($pm, $n);
+    else if($n := $ofc->find("FP",dop2))
+	$ofc->ajcompl($pm, $n);
+    else if($n := $ofc->find("FP",dop3))
+	$ofc->ajcompl($pm, $n);
+
+    # Usunięcie zaimka osobowego w roli podmiotu,
+    # oprócz zaimków trzeciej osoby w czasie nieprzeszłym
+    # 'я напишу' r=>p 'napiszę'
+    # 'он знал' r=>p 'wiedział'
+    # 'она пишет' r=>p 'ona pisze'
+    # 'я пишет' r=>p 'ja pisze'
+
+    if(Typ = "GR_G")
+    {
+	C := odsłownik; %Glowa->C := odsłownik;
+	P := "G"; %Glowa->P := "G";
+    }
+    else if(Typ = "GR_D")
+    {
+	C := odsłownik; %Glowa->C := odsłownik;
+	P := "D"; %Glowa->P := "D";
+    }
+    else if(Typ = "GR_A")
+    {
+	C := odsłownik; %Glowa->C := odsłownik;
+	P := "A"; %Glowa->P := "A";
+    }
+    else if(Typ = "GR_I")
+    {
+	C := odsłownik; %Glowa->C := odsłownik;
+	P := "I"; %Glowa->P := "I";
+    }
+    else if(Typ = "GR_L")
+    {
+	C := odsłownik; %Glowa->C := odsłownik;
+	P := "L"; %Glowa->P := "L";
+    }
+    else if(Typ = "GR_N")
+    {
+	C := odsłownik; %Glowa->C := odsłownik;
+	P := "N"; %Glowa->P := "N";
+    }
+    if(C = uprzednik and %Glowa->A = ndk)
+	acc_to_gen();
+
+    # zamiana biernika na dopełniacz dla dopełnienia odsłownika
+    if(C = odsłownik and label() != "iczynny")
+	acc_to_gen();
+
+    propagate_tense();
+
+    %Dop1 [ label() = "dop1" ];
+    %Dop2 [ label() = "dop2" ];
+    %Dop3 [ label() = "dop3" ];
+
+    if(Neg or C = odsłownik)
+    {
+	# 'я не люблю девушки' r=>p 'nie kocham dziewczyny'
+	acc_to_gen();
+    }
+}
+
+#!!! TRACE czasownik.t
+
+#
+
+C => C
+{
+    if(@.Neg = 1)
+	Neg := 1;
+
+    if(@.C = imiesłów_bierny) {
+	Strona := bierna;
+    }
+    C := @.C;
+    if(C = imiesłów_czynny_uprzedni) {
+	C := imiesłów_czynny;
+    } else if(c = imiesłów_bierny_współczesny) {
+	C := imiesłów_bierny;
+    }
+    A := @.A;
+    L := @.L;
+    O := @.O;
+    # 'писали' r=>p 'pisali'
+    if(O = nil) {
+	O := 3;
+    }
+    # мы писали' r=>p 'pisaliśmy'
+    if(@.R != nil) {
+	R := rtocode(@.R);
+    } else {
+	R := 1;
+    }
+    'niech':posiłk => 'пусть':posiłk {}
+    if(find('пусть',)) {
+	delete('пусть',);
+	insert_before('пусть',);
+    }
+}
+
+FC => FC
+{
+    :zbędny => :zbędny {}
+
+    delete(,zbędny);
+
+
+    :podmiot => :podmiot{}
+    :dop1 => :dop1{}
+    :dop2 => :dop2{}
+    :dop3 => :dop3{}
+    :okol => :okol{}
+
+    %Glowa [label() = "#"];
+
+    if(@.Neg = 1)
+	Neg := 1;
+
+    'nie' => 'не' {}
+    'się':czynne => 'się':czynne { Equiv := ""; }
+#
+#
+    'się':bierne => 'себя':bierne {}
+    if(find('się',czynne)) {
+	delete('się',czynne);
+	find("C","#")->Zwr := 1;
+    }
+    if(find('ma',)) {
+	delete('ma',);
+	find('не',)->change_category('нет');
+	Dop1 := "G";
+    }
+    'to' => 'это' {}
+
+    if(find('это',))
+    {
+	delete('jest',);
+	delete('są',);
+    }
+
+    if(find("ZS",)->Equiv = "czy") {
+	insert_right('ли',);
+	delete("ZS",);
+    }
+    C := @.C;
+    A := @.A;
+    L := @.L;
+    O := @.O;
+    if(O = nil) {
+	O := 3;
+    }
+    if(@.R != nil) {
+	R := rtocode(@.R);
+	if(R = 1) {
+	    R := 2;
+	}
+    } else {
+	R := 2;
+    }
+    if((O = 1 or O = 2)
+       # 'robisz' p=>r 'ты делаешь'
+       # 'robiłem' p=>r 'я делал'
+       # 'zrobimy' p=>r 'мы сделаем'
+       # 'zrobilibyście' p=>r 'вы сделали бы'
+       # 'zrób' p=>r 'сделай'
+       and (C = teraźniejszy or C = przeszły or C = przyszły
+	    or C = przypuszczający)) {
+	if(find(,"podmiot")) {
+	    # nic nie rób
+	} else {
+	    insert_pers_pronoun();
+	}
+    }
+    if(C == rozkazujący and O == 1 and L == 2) {
+	# 'kupmy' p=>r 'давайте купим'
+	# 'kupujmy' p=>r 'давайте покупаем'
+	insert_left("давайте",);
+	if(A = dk) {
+	    C := przyszły;
+	} else {
+	    C := teraźniejszy;
+	}
+    }
+
+    # 'ten dom zbudowano w 1950 r.' p=>r 'этот дом построили в 1950 г.'
+    if(C = bezosobnik) {
+	C := przeszły;
+	O := 3;
+	L := 2;
+	R := 2;
+    }
+
+    if(%Glowa)
+    {
+	# przesuwamy sloty do głowy
+	if(pro_hks(%Glowa))
+	{
+	    # ustawiamy sloty zgodnie z tym co jest między dolarami w odpowiedniku
+	    %Glowa->target_info_for_slots(%Glowa->Equiv,1);
+	}
+
+	if(%Glowa->cat() = "C")
+	{
+	    SpecPrep := %Glowa->SpecPrep;
+	    SpecCat := %Glowa->SpecCat;
+if(undefined(Dop1) and %Glowa->Dop1)
+	    {
+		Dop1 := %Glowa->Dop1;
+		Przyim1  := %Glowa->Przyim1;
+		if(%Glowa->Equiv = "быть"
+		   and %Glowa->C = teraźniejszy
+		   and Dop1 = "I") {
+		    Dop1 := "N";
+		}
+	    }
+if(undefined(Dop2) and %Glowa->Dop2)
+	    {
+		Dop2 := %Glowa->Dop2;
+		Przyim2  := %Glowa->Przyim2;
+		if(%Glowa->Equiv = "быть"
+		   and %Glowa->C = teraźniejszy
+		   and Dop2 = "I") {
+		    Dop2 := "N";
+		}
+	    }
+if(undefined(Dop3) and %Glowa->Dop3)
+	    {
+		Dop3 := %Glowa->Dop3;
+		Przyim3  := %Glowa->Przyim3;
+		if(%Glowa->Equiv = "быть"
+		   and %Glowa->C = teraźniejszy
+		   and Dop3 = "I") {
+		    Dop3 := "N";
+		}
+	    }
+	       
+	}
+    }
+
+    # 'brak mi pieniędzy' p=>r 'не хватает мне денег'
+    if(SpecCat = "0")
+    {
+	R := 5;
+	L := 1;
+	O := 3;
+    }
+
+    delete("Hk",);
+
+if($DOP := find(,dop1))
+    {
+	if($DOP.cat() = "UFR")
+	{
+	    if(Dop1 = "SUBJ")
+	    {		
+		$podmiot := find(,podmiot);
+
+		if($podmiot)
+		{
+		    $podmiot->change_label(dop1);
+		    Dop1 := SpecCat;	
+		    Przyim1 := SpecPrep;
+		}
+
+		$DOP->change_label(podmiot);
+		$DOP.P := "N";
+		$DOP->Przyim := brak;
+
+		$t := $DOP;
+		$DOP := $podmiot;
+		$podmiot := $t;
+	    }
+
+	    $DOP.Przyim := Przyim1;
+	    $DOP.P := Dop1;
+	}
+	else if($DOP.cat() = "FP")
+	{
+	    $DOP.Przyim := Przyim1;
+
+	    if(Dop1 =~ /^AJ_(.*)/)
+	    {
+		$DOP.P := $1;
+	    }
+	}
+	else if($DOP.cat() = "ZPODRZ" or $DOP.cat() = "FC")
+	{
+	    $DOP.Typ := Dop1;
+	    $DOP.Przyim := Przyim1;
+	}
+    }
+if($DOP := find(,dop2))
+    {
+	if($DOP.cat() = "UFR")
+	{
+	    if(Dop2 = "SUBJ")
+	    {		
+		$podmiot := find(,podmiot);
+
+		if($podmiot)
+		{
+		    $podmiot->change_label(dop2);
+		    Dop1 := SpecCat;	
+		    Przyim1 := SpecPrep;
+		}
+
+		$DOP->change_label(podmiot);
+		$DOP.P := "N";
+		$DOP->Przyim := brak;
+
+		$t := $DOP;
+		$DOP := $podmiot;
+		$podmiot := $t;
+	    }
+
+	    $DOP.Przyim := Przyim2;
+	    $DOP.P := Dop2;
+	}
+	else if($DOP.cat() = "FP")
+	{
+	    $DOP.Przyim := Przyim2;
+
+	    if(Dop2 =~ /^AJ_(.*)/)
+	    {
+		$DOP.P := $1;
+	    }
+	}
+	else if($DOP.cat() = "ZPODRZ" or $DOP.cat() = "FC")
+	{
+	    $DOP.Typ := Dop2;
+	    $DOP.Przyim := Przyim2;
+	}
+    }
+if($DOP := find(,dop3))
+    {
+	if($DOP.cat() = "UFR")
+	{
+	    if(Dop3 = "SUBJ")
+	    {		
+		$podmiot := find(,podmiot);
+
+		if($podmiot)
+		{
+		    $podmiot->change_label(dop3);
+		    Dop1 := SpecCat;	
+		    Przyim1 := SpecPrep;
+		}
+
+		$DOP->change_label(podmiot);
+		$DOP.P := "N";
+		$DOP->Przyim := brak;
+
+		$t := $DOP;
+		$DOP := $podmiot;
+		$podmiot := $t;
+	    }
+
+	    $DOP.Przyim := Przyim3;
+	    $DOP.P := Dop3;
+	}
+	else if($DOP.cat() = "FP")
+	{
+	    $DOP.Przyim := Przyim3;
+
+	    if(Dop3 =~ /^AJ_(.*)/)
+	    {
+		$DOP.P := $1;
+	    }
+	}
+	else if($DOP.cat() = "ZPODRZ" or $DOP.cat() = "FC")
+	{
+	    $DOP.Typ := Dop3;
+	    $DOP.Przyim := Przyim3;
+	}
+    }
+}
+
+ZS => ZS
+{
+}
+
+sub ::insert_pers_pronoun()
+{
+	    if(O = 1 and L = 1)
+		$zaimek := "я";
+	    else if(O = 2 and L = 1)
+		$zaimek := "ты";
+	    else if(O = 1 and L = 2)
+		$zaimek := "мы";
+	    else if(O = 2 and L = 2)
+		$zaimek := "вы";	    
+	    $podmiot := insert_left("UFR","podmiot");
+	    $podmiot->P := "N";
+	    $podmiot->R := R;
+	    $podmiot->O := O;
+	    $podmiot->L := L;
+
+	    $wzaimek := $podmiot->insert_left("ZR","#");
+	    $wzaimek->P := "N";
+	    $wzaimek->R := R;
+	    $wzaimek->O := O;
+	    $wzaimek->L := L;
+	    $wzaimek->Typ := osobowy;
+
+	    $wzaimek->Equiv := $zaimek;
+}
+
+#!!! TRACE liczebnik.i
+
+#
+
+sub KWANT::inflection(w,i)
+{
+    $p := PKod;
+
+    if($i =~ /^(.*_|(?:))([A-Za-z]+[0-9]*)-?([A-Za-z]*)(:[0-9u]+|(?:))(!?)$/)
+    {
+	$ia := $1; $ib := $2; $ic := $3; $id := $4; $ie := $5;
+
+	# uwzględniamy przymiotniki itp. przy liczebniku
+	if(Typ = 5 and $ib != "LG" and
+	   (PKod = ptocode("N") or PKod = ptocode("A")))
+	    $p := ptocode("G"); 
+
+	if($ia != "")
+	    $name := $ia + $ib;
+	else
+	    $name := $w + "_" + $ib;
+
+	if($ic != "")
+	    $mcode := mtocode($ic);
+	else
+	    $mcode := mtocode($ib);
+	
+	if($id != "" and $id =~ /^:([0-9])/)
+	    $r := atoi($1);
+	else
+	    $r := R;
+
+	if($id != "" and $id =~ /^:.([0-9])/)
+	    $l := atoi($1);
+	else
+	    $l := L;
+
+	if($id != "" and $id =~ /^:.*u$/)
+		return pair($name,"u" + get_morpho_ru($mcode, $r, $l, 0, $p));
+	else
+		return pair($name,get_morpho_ru($mcode, $r, $l, 0, $p));
+    }
+
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+sub KWANT::surface()
+{
+	PKod := ptocode(P);
+
+	if(Inflection and Inflection != "")
+	    return inflection_cycle(Equiv, Inflection);
+
+	return Equiv;
+
+}
+
+#!!! TRACE liczebnik.t
+
+#
+
+LG => LG
+{
+    '$jeden' => 'один' { }
+    if(find('один',))
+    {
+	Equiv := "один";
+	Inflection := "ZP!";
+    }
+
+    P := pl_to_latin(@.P);
+    L := @.L;
+    R := rtocode(@.R);
+    if (undefined(Typ)) {
+	if (@.Typ = zg1)
+	    Typ := 1;
+	else if (@.Typ = zg or @.Typ = dpoj)
+	    Typ := 2;
+	else if (@.Typ = d)
+	    Typ := 5;
+	else {
+	    warning("Nieznany typ"+@.Typ);
+	    Typ := @.Typ;
+	}
+    }
+}
+
+LP => LP
+{
+}
+
+
+#!!! TRACE okol.t
+
+#
+
+PR => PR
+{
+}
+
+FPSs => FPSs
+{
+}
+
+SFPS => SFPS
+{
+}
+
+FPR=>TEMP
+{
+    # 'друг к другу' r=>p 'do siebie nawzajem'
+    # 'к другу' r=>p 'do przyjaciela'
+    'друг' => 'nawzajem' {}
+    delete('nawzajem',);
+
+    $H := find("UFR","#");
+    if($H)
+    {
+	# @todo "between Adam and the programmer' e=>p 'pomiędzy Adamem i programistą'
+	if($aK := find(,"a"))
+	    delete($aK,);
+	if($Przyim := find("PR",))
+	{
+	    # @todo "on this plane' e=>p 'tym samolotem'
+	    if($Przyim.label() = "spec" and 
+	       $H.SpecCat)
+	    {
+		$H.P := $H.SpecCat;
+		$H.Przyim := $H.SpecPrep;
+		delete($Przyim,);
+	    }
+	    else
+	    {
+		$H.Przyim := $Przyim.Equiv;
+		delete($Przyim,);
+		$H.P := $Przyim.Dop1;
+	    }
+	}
+
+#
+#
+#
+#
+#
+
+	$L := label();
+	replace_with($H);
+	$H->change_label($L);
+
+#
+	if($aK)
+	{
+	    $H->insert_right($aK,);
+	    $aK->change_label("a");
+	}
+    }
+}
+
+#
+FSPEC=>TEMP
+{
+    $H := find("UFR",);
+	
+    if($H)
+    {
+	$H.P := $H->find(,"#")->SpecCat;
+	$H.Przyim := $H->find(,"#")->SpecPrep;
+	
+	delete("PR",);
+	$L := label();
+	replace_with($H);
+	$H->change_label($L);
+    }
+}
+
+#!!! TRACE przymiotnik.i
+
+#
+
+sub ::stopieńtocode(stopień)
+{
+    if($stopień = wyższy)
+	return 5;
+    else if($stopień = najwyższy)
+	return 6;
+
+    return 1;	
+}
+
+sub P::inflection(w,i)
+{
+    if($i =~ /^(.*_|(?:))([A-Za-z]+[0-9]*)-?([A-Za-z]*)(:[0-9u]+|(?:))(!?)$/)
+    {
+	$ia := $1; $ib := $2; $ic := $3; $id := $4; $ie := $5;
+
+	if($ia != "")
+	    $name := $ia + $ib;
+	else
+	    $name := $w + "_" + $ib;
+
+	if($ic != "")
+	    $mcode := mtocode($ic);
+	else
+	    $mcode := mtocode($ib);
+
+	if($mcode = mtocode("P"))
+	{
+	    $mcode := stopieńtocode(Stopień);
+            if($mcode = mtocode("PW")) {
+                $mcode := mtocode("P");
+                $pref := "более";
+            } else if($mcode = mtocode("PN")) {
+                $mcode := mtocode("P");
+                $pref := "наиболее";
+            }
+	}
+	else if(not ($mcode = mtocode("PW") and Stopień = wyższy or
+	             $mcode = mtocode("PN") and Stopień = najwyższy))
+	{
+	    if(Stopień = wyższy)
+		$pref := "более";
+	    else if(Stopień = najwyższy)
+		$pref := "наиболее";
+	    else if(Stopień = przeciwwyższy)
+		$pref := "менее";
+	    else if(Stopień = przeciwnajwyższy)
+		$pref := "наименее";
+	}
+	$forma := get_morpho_ru($mcode, R, L, 0, PKod);
+	if(($id != "" and $id =~ /^:.*u$/) or Upper)
+	    return $pref & pair($name,"u" + $forma);
+	else
+	    return $pref & pair($name,$forma);
+    }
+
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+sub ZP::inflection(w,i)
+{
+    if($i =~ /^(.*_|(?:))([A-Za-z]+[0-9]*)-?([A-Za-z]*)(:[0-9u]+|(?:))(!?)$/)
+    {
+	$ia := $1; $ib := $2; $ic := $3; $id := $4; $ie := $5;
+
+	if($ia != "")
+	    $name := $ia + $ib;
+	else
+	    $name := $w + "_" + $ib;
+
+	if($ic != "")
+	    $mcode := mtocode($ic);
+	else
+	    $mcode := mtocode($ib);
+
+	if($mcode = mtocode("P"))
+	{
+	    $mcode := stopieńtocode(Stopień);
+	}
+	else if(not ($mcode = mtocode("PW") and Stopień = wyższy or
+	             $mcode = mtocode("PN") and Stopień = najwyższy))
+	{
+	    if(Stopień = wyższy)
+		$pref := "более";
+	    else if(Stopień = najwyższy)
+		$pref := "наиболее";
+	    else if(Stopień = przeciwwyższy)
+		$pref := "менее";
+	    else if(Stopień = przeciwnajwyższy)
+		$pref := "наименее";
+	}
+
+	if(($id != "" and $id =~ /^:.*u$/) or Upper)
+	    return $pref & pair($name,"u" + get_morpho_ru($mcode, R, L, 0, PKod));
+	else
+	    return $pref & pair($name,get_morpho_ru($mcode, R, L, 0, PKod));
+    }
+
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+sub LP::inflection(w,i)
+{
+    if($i =~ /^(.*_|(?:))([A-Za-z]+[0-9]*)-?([A-Za-z]*)(:[0-9u]+|(?:))(!?)$/)
+    {
+	$ia := $1; $ib := $2; $ic := $3; $id := $4; $ie := $5;
+
+	if($ia != "")
+	    $name := $ia + $ib;
+	else
+	    $name := $w + "_" + $ib;
+
+	if($ic != "")
+	    $mcode := mtocode($ic);
+	else
+	    $mcode := mtocode($ib);
+
+	if($mcode = mtocode("P"))
+	{
+	    $mcode := stopieńtocode(Stopień);
+	}
+	$forma := get_morpho_ru($mcode, R, L, 0, PKod);
+	if(($id != "" and $id =~ /^:.*u$/) or Upper)
+	    return $pref & pair($name,"u" + $forma);
+	else
+	    return $pref & pair($name,$forma);
+    }
+
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+
+sub P::surface()
+{
+    PKod := ptocode(P);
+
+    if(Inflection and Inflection != "")
+	return inflection_cycle(Equiv, Inflection);
+    else
+    {
+	# brak tinflection - rozwiązanie awaryjne
+	if(Equiv =~ /^([^ ]+)( .*)$/) {
+	    return pair($1 + "_P",get_morpho_ru(StopieńKod,R,L,0,PKod)) & $2;
+	} else {
+	    return pair(Equiv + "_P",get_morpho_ru(StopieńKod,R,L,0,PKod));
+	}
+    }
+}
+
+sub LP::surface()
+{
+    PKod := ptocode(P);
+
+    if(Inflection and Inflection != "")
+	return inflection_cycle(Equiv, Inflection);
+    else
+    {
+	# brak tinflection - rozwiązanie awaryjne
+	if(Equiv =~ /^([^ ]+)( .*)$/) {
+	    return pair($1 + "_P",get_morpho_ru(StopieńKod,R,L,0,PKod)) & $2;
+	} else {
+	    return pair(Equiv + "_P",get_morpho_ru(StopieńKod,R,L,0,PKod));
+	}
+    }
+}
+
+sub ZP::surface()
+{
+    PKod := ptocode(P);
+
+    if(Inflection and Inflection != "")
+	return inflection_cycle(Equiv, Inflection);
+    else
+    {
+	# brak tinflection - rozwiązanie awaryjne
+	if(Equiv =~ /^([^ ]+)( .*)$/)
+	    return pair($1 + "_ZP",get_morpho_ru(mtocode("ZP"),R,L,0,PKod)) & $2;
+	else
+	    return pair(Equiv + "_ZP",get_morpho_ru(mtocode("ZP"),R,L,0,PKod));
+    }
+}
+
+sub FP::surface()
+{
+    if(Przyim and Przyim != "brak")
+    {
+	$PR := insert_left("PR",);
+	$PR->Equiv := strip_quotes(Przyim);	
+    }
+
+    return gensurface();
+}
+
+sub PS::surface()
+{
+    if(Comp or Superl)
+	return Equiv;
+    if(not Equiv =~ / /)
+    {
+	if(Stopień = wyższy)
+	    return pair(Equiv + "_PS","W");
+    }
+    if(Stopień = wyższy)
+	return "более" & Equiv;
+    else if(Stopień = najwyższy)
+	return "наиболее" & Equiv;
+    return Equiv;
+}
+
+#!!! TRACE przymiotnik.m
+
+#
+
+sub FP::propagate_degree()
+{
+    foreach $S 
+    {
+	if($S->label() = "#" and
+	   $S->cat() != "SFP" and
+	   $S->cat() != "FPS")
+	{
+	    $S->Stopień := Stopień;
+	    $S->propagate_degree();
+	}
+    }
+}
+
+sub FPS::propagate_degree()
+{
+    foreach $S 
+    {
+	if($S->label() = "#" and
+	   $S->cat() != "SFPS" and
+	   $S->cat() != "FPSS")
+	{
+	    $S->Stopień := Stopień;
+	    $S->propagate_degree();
+	}
+    }
+}
+
+
+sub ::propagate_degree()
+{
+}
+
+#
+
+sub FP::default()
+{
+#
+    propagate_case();
+    propagate_num();
+    propagate_gender();
+}
+
+#!!! TRACE przymiotnik.t
+
+#
+
+P => P
+{
+    if(@.Sh = 2)
+    {
+	Upper := 1;
+    }
+    P := pl_to_latin(@.P);
+    R := rtocode(@.R);
+    L := @.L;
+    if (@.R = nil and @.L = nil) {
+        R := 2;
+        L := 1;
+    }
+    Stopień := @.Stopień;
+}
+
+PS => PS
+{
+    Stopień := @.Stopień;
+}
+
+FP => FP
+{
+    :dop1 => :dop1 {}
+    :dop2 => :dop2 {}
+
+
+    'tak' => 'так' {}
+    'nie' => 'не' {}
+
+    'wystarczająco' => 'достаточнo' {}
+
+    if(find('na',) and find('tyle',))
+    {
+	delete('na',);
+	find('tyle',)->change_category('достаточнo');
+    }
+
+
+    '$taki' => ZP
+    {
+	Equiv := "такой";
+	Inflection := "ZP!";
+    }
+
+    P := pl_to_latin(@.P);
+    R := rtocode(@.R);
+    L := @.L;
+    if (@.R = nil and @.L = nil) {
+        R := 2;
+        L := 1;
+    }
+    Stopień := @.Stopień;
+    $Głowa := find("P","#");
+    $Głowa.Stopień := Stopień;
+    foreach $s {
+	if ($s->cat() = "FPS" and $intensifier_head := $s->find("PS","#")) {
+	    if ($intensifier_head->Bardziej or $intensifier_head->Najbardziej) {
+		# 'более аналитический' r=>p 'bardziej analityczny'
+		# 'наиболее спокойна' r=>p 'najspokojniejsza'
+		delete($s,);
+	    } else if ($intensifier_head->Mniej or $intensifier_head->Najmniej) {
+		# samo się robi:
+		# 'менее аналитический' r=>p 'mniej analityczny'
+		# 'наименее спокойна' r=>p 'najmniej spokojna'
+		Stopień := równy;
+		$Głowa.Stopień := równy;
+	    }
+	}
+    }
+    if ($Głowa) {
+        if (undefined(Dop1) and $Głowa->Dop1) {
+            Dop1 := $Głowa->Dop1;
+            Przyim1 := $Głowa->Przyim1;
+        }
+        if (undefined(Dop2) and $Głowa->Dop2) {
+            Dop2 := $Głowa->Dop2;
+            Przyim2 := $Głowa->Przyim2;
+        }
+    }
+if ($DOP := find(,dop1)) {
+	if ($DOP.cat() = "UFR") {
+	    $DOP.Przyim := Przyim1;
+	    $DOP.P := Dop1;
+	}
+	if ($DOP.cat() = "FC") {
+	    $DOP.Typ := Dop1;
+	    $DOP.Przyim := Przyim1;
+	}
+    }
+if ($DOP := find(,dop2)) {
+	if ($DOP.cat() = "UFR") {
+	    $DOP.Przyim := Przyim2;
+	    $DOP.P := Dop2;
+	}
+	if ($DOP.cat() = "FC") {
+	    $DOP.Typ := Dop2;
+	    $DOP.Przyim := Przyim2;
+	}
+    }
+}
+
+FPS => FPS
+{
+
+    'tam'   => 'там'    {}
+    'gdzie' => 'где'    {}
+    'dokąd' => 'куда'   {}
+    'skąd'  => 'откуда' {}
+    'wtedy' => 'тогда'  {}
+    'gdy'   => 'когда'  {}
+    'kiedy' => 'когда'  {}
+    'jak'   => 'как'    {}
+
+    'tak' => 'так' {}
+    'nie' => 'не' {}
+
+    '$sam' => ZP 
+    {
+	Equiv := "сам";
+	Inflection := "ZP!";
+	P := pl_to_latin(@.P);
+	R := rtocode(@.R);
+	L := @.L;
+    }
+
+    Stopień := @.Stopień;
+    $Głowa := find("PS","#");
+    $Głowa.Stopień := Stopień;
+    foreach $s {
+	if ($s->cat() = "FPS" and $intensifier_head := $s->find("PS","#")) {
+	    if ($intensifier_head->Bardziej or $intensifier_head->Najbardziej) {
+		# 'более' r=>p 'bardziej'
+		# 'более сумасшедше' r=>p 'bardziej po wariacku'
+		delete($s,);
+	    } else if ($intensifier_head->Mniej or $intensifier_head->Najmniej) {
+		# 'наименее сумасшедше' r=>p 'najmniej po wariacku'
+		Stopień := równy;
+		$Głowa.Stopień := równy;
+	    }
+	}
+    }
+}
+
+ZP => ZP
+{
+    P := pl_to_latin(@.P);
+    R := rtocode(@.R);
+    L := @.L;
+
+
+}
+
+ZD => ZD
+{
+}
+
+
+SPÓJNIK_OD => SPÓJNIK_OD
+{
+}
+
+#
+#
+#
+#
+FNIŻ => FNIŻ
+{
+	# trzeba odróżnić "od..." od "niż...", w pierwszym przypadku
+	# musimy wyrzucić wszelkie przyimki z UFR
+	delete("SPÓJNIK_OD",); # usuwamy 'od'
+        delete("S",);          # usuwamy 'niż'
+	insert_left("Przyim",)->Equiv := "чем";
+
+	if($n := find("UFR",))
+	{
+		$n.Przyim := brak;
+		$n.P := "N";
+	}
+}
+
+FS => FS
+{
+#
+#
+}
+
+FPs => FPs
+{
+}
+
+SFP => SFP
+{
+}
+
+#!!! TRACE rzeczownik.i
+
+#
+
+sub R::inflection(w,i)
+{
+    # instrukcja fleksyjna składa się z pięciu członów
+    if($i =~ /^(.*_|(?:))([A-Za-z]+[0-9]*)-?([A-Za-z]*)(:[0-9u]+|(?:))(!?)$/)
+    {
+	$ia := $1; $ib := $2; $ic := $3; $id := $4; $ie := $5;
+
+	if($ia != "")
+	    $name := $ia + $ib;
+	else
+	    $name := $w + "_" + $ib;
+
+	if($ic != "")
+	    $mcode := mtocode($ic);
+	else
+	    $mcode := mtocode($ib);
+	
+	if($id != "" and $id =~ /^:([0-9])/)
+	    $r := atoi($1);
+	else
+	    $r := R;
+
+	if($id != "" and $id =~ /^:.([0-9])/)
+	    $l := atoi($1);
+	else
+	    $l := L;
+
+	if(($id != "" and $id =~ /^:.*u$/) or Upper)
+		return pair($name,"u" + get_morpho_ru($mcode, $r, $l, 0, PKod));
+	else
+		return pair($name,get_morpho_ru($mcode, $r, $l, 0, PKod));
+    }
+
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+
+sub ::inflection_cycle(e, t)
+{
+    # usuwamy zbędne spacje z początku
+    if($e =~ /^ +(.*)$/)
+	$e := $1;
+
+    if($t =~ /^ +(.*)$/)
+	$t := $1;
+
+    # kolejno odrywamy wyrazy...
+    if($e =~ /^(\$[^\$]+\$)(.*)$/ or
+       $e =~ /^([^, ]+)(.*)$/ or
+       $e =~ /^(,)(.*)$/)
+    {
+	$ef := $1; $er := $2;
+
+	# ... i odpowiadające im instrukcje fleksyjne
+	if($t =~ /^([^ ]+)(.*)$/)
+	{
+	    $tf := $1; $tr := $2;
+
+	    if($ef =~ /^\$([^\$]+)\$/)
+	    {
+		# obsługa slotów - chodzi o przypadek, gdy zfragmentowaliśmy odpowiednika
+		# czyli np. dla idiomów czasownikowych ze slotem (@todo jeszcze jakichś??)
+		# a nie idiomów zdaniowych/przysłówkowych ze slotem
+		# uwaga: wywołujemy tutaj ręcznie doSurface!
+
+		$rf := $1;
+
+		if($rf =~ /\[([123])\]/)
+		    $myslot := find(,"slot" + $1);
+		else
+		{
+		    $myslot := find(,"slot1") or
+		    $myslot := find(,"slot2") or
+		    $myslot := find(,"slot3");
+		}
+
+		if($myslot)
+		{
+		    $myslot->do_surface();
+		    # @todo sprawdzić, co się stanie z wariantami!
+		    delete($myslot,);
+		    return $myslot->gather_surf() & inflection_cycle($er,$tr);
+		}
+		
+		warning("slot cannot be found!");
+		return inflection_cycle($er,$tr);
+		
+	    }
+	    else
+	    {
+		if($tf = "0")
+		    $rf := $ef;
+		else       
+		    $rf := inflection($ef,$tf);
+	    }
+	}
+	else
+	{
+	    warning($e + " dla: " + $t);
+
+	    $rf := $ef;
+	}
+
+	if($er != "" and $er =~ /[^ ]/)
+	{
+	    return $rf & inflection_cycle($er,$tr);
+	}
+	else
+	{
+	    if($tr =~ /[^ ]/)
+	    {
+		warning("za dużo instrukcji fleksyjnych:");
+		warning($e + " dla: " + $t);
+	    }
+	    return $rf;
+	}
+    }
+
+    return $e;
+}
+
+
+sub R::surface()
+{
+    PKod := ptocode(P);
+
+    if(Inflection and Inflection != "")
+	return inflection_cycle(Equiv, Inflection);
+    else
+    {
+	# brak tinflection - rozwiązanie awaryjne
+	if(Equiv =~ /^([^ ]+)( .*)$/)
+	    return pair($1 + "_R",get_morpho_ru(0,R,L,0,PKod)) & $2;
+	else
+	    return pair(Equiv + "_R",get_morpho_ru(0,R,L,0,PKod));
+    }
+}
+
+#
+#
+#
+#
+sub ::mtocode(m)
+{
+    if($m =~ /^([A-Za-z]+)([0-9]*)$/)
+	$m := $1;
+    if($m = "R")
+	return 0;
+    if($m = "P")
+	return 1;
+    if($m = "CP")
+	return 2;
+    if($m = "CO")
+	return 3;
+    if($m = "ZR")
+	return 4;
+    if($m = "PW")
+	return 5;
+    if($m = "PN")
+	return 6;
+    if($m = "CC")
+	return 7;
+    if($m = "LG")
+	return 8;
+    if($m = "LGZ")
+	return 9;
+    if($m = "IBR")
+	return 10;
+    if($m = "ICZ")
+	return 11;
+    if($m = "ODS")
+	return 12;
+    if($m = "ZP")
+	return 13;
+
+    warning("nieznane oznaczenie zbioru nazw form fleksyjnych:");
+    warning($m);
+    return 0;
+}
+
+sub ::ptocode(p)
+{
+    if($p = "G")
+	return 2;
+    else if($p = "D")
+	return 3;
+    else if($p = "A")
+	return 4;
+    else if($p = "I")
+	return 5;
+    else if($p = "L")
+	return 6;
+    else if($p = "V")
+	return 7;
+    else
+	return 1;
+}
+
+
+#!!! TRACE rzeczownik.m
+
+#
+
+sub UFR::acc_to_gen()
+{
+    %Dop1 [ label() = "dop1" ];
+    %Dop2 [ label() = "dop2" ];
+    %Dop3 [ label() = "dop3" ];
+
+    if(%Dop1->cat() = "UFR" and %Dop1->P = "A" and not %Dop1->Przyim)
+    {
+	%Dop1->P := "G";
+	%Dop1->propagate_case();
+    }
+    else if(%Dop2->cat() = "UFR" and %Dop2->P = "A" and not %Dop2->Przyim)
+    {
+	%Dop2->P := "G";
+	%Dop2->propagate_case();
+    }
+    else if(%Dop3->cat() = "UFR" and %Dop3->P = "A" and not %Dop3->Przyim)
+    {
+	%Dop3->P := "G";
+	%Dop3->propagate_case();
+    }
+
+    AtoG := 1;
+}
+
+sub SFR::default()
+{
+    foreach $s
+    {
+	if($s->cat() = "UFR")
+	{
+	    if(not R or $s->R = 1 or ($s->R = 2 and $s->R != 1))
+	    {
+		R := $s->R;
+	    }
+	}
+    }
+}
+
+sub UFR::default()
+{
+    %Glowa [ label() = "#" ];
+
+    if (%Glowa->R)
+	R := %Glowa->R;
+    else if (%Glowa->C = odsłownik)
+	R := 5;
+
+    %Dop1 [label() = dop1];
+    %Dop2 [label() = dop2];
+
+    # 'walizka ta' p=>r 'этот чемодан'
+    %PreFP [count_nodes()=1 and (cat()="FP" or cat() = "ZP") ];
+    order %PreFP < %Glowa;
+
+    if (%Glowa->cat() = "C" and %Glowa->C = "odsłownik")
+	acc_to_gen();
+    propagate_gender();
+    propagate_case();
+    if (KPD)
+	L := 2;
+    propagate_num();
+}
+
+#!!! TRACE rzeczownik.t
+
+#
+
+sub ::pl_to_latin(p)
+{
+    if($p = "mian") return "N";
+    if($p = "dop") return "G";
+    if($p = "cel") return "D";
+    if($p = "bier") return "A";
+    if($p = "narz") return "I";
+    if($p = "miejsc") return "L";
+    if($p = "woł") return "V";
+
+    warning("nieznane oznaczenie przypadka: "+$p);
+
+    return $p;
+}
+
+sub ::transfer_noun()
+{
+    if(undefined(O))
+    {
+	if(@.O and @.O != nil)
+	    O := @.O;
+	else
+	    O := 3;
+    } else {
+	OWymuszone := 1;
+    }
+    # 'новая дверь открылась' r=>p 'nowe drzwi otworzyły się'
+    # 'новые весы поколебались' r=>p 'nowa waga zachwiała się'
+    if(L = 1 or L = 2)
+    {
+	LWymuszone := 1;
+    }
+    if(undefined(L))
+    {
+	if(@.L)
+	    L := @.L;
+	else
+	    L := nil;
+    }
+    P := pl_to_latin(@.P);
+    if(undefined(P))
+	P := "N";
+    if(undefined(R))
+	R := rtocode(@.R);
+    if(undefined(S))
+    {
+	if(@.S)
+	    S := @.S;
+	else
+	    S := any;
+    }
+}
+
+R => R
+{
+    if(@.Sh = 2)
+    {
+	Upper := 1;
+    }
+    if(Equiv = "вы") {
+	change_category("ZR");
+	Typ := osobowy;
+    }
+    transfer_noun();
+}
+
+ZRo => ZR
+{
+
+    Typ := osobowy;
+    transfer_noun();
+}
+
+ZRp => ZR
+{
+    Typ := pytajny;
+    transfer_noun();
+}
+
+ZRw => ZR
+{
+    Typ := wskazujący;
+    transfer_noun();
+}
+
+ZRn => ZR
+{
+    Typ := nieokreślony;
+    transfer_noun();
+}
+
+ZRs => ZR
+{
+    Typ := zwrotny;
+    transfer_noun();
+}
+
+SFR => SFR
+{
+}
+
+FRs => FRs
+{
+}
+
+OTH => INNE
+{
+    slots();
+}
+
+ROK => ROK
+{
+}
+
+FN => FN
+{
+    # próbujemy odgadnąć rodzaj po formie czasownika w języku źródłowym
+    if(eqv()->parent()->label() = "podmiot" &&
+       eqv()->parent()->parent()->R &&
+       eqv()->parent()->parent()->R != nil)
+    {
+	R := rtocode(eqv()->parent()->parent()->R);
+    }
+    else
+    {
+	R := 3;
+    }
+}
+
+N => N
+{
+}
+
+W => W
+{
+}
+
+FR => UFR
+{
+    :dop1 => :dop1 {}
+    :dop2 => :dop2 {}
+    :dopełniacz => :dopełniacz {}
+
+
+    'r.' => 'г.' {}
+    'rok' => 'год' {}
+    'właśnie' => 'именно' {}
+    'nie' => 'не' {}
+    # 'między chłopcami a dziewczynami' p=>r 'между мальчиками и девушками'
+    'i' => 'и' {}
+    'a' => 'и' {}
+
+    RO => RO
+    {
+	'это' => 'to' {}
+    }
+    :partykuła => :partykuła {}
+
+
+    '$to' => ZR { Korelat := 1; }
+
+    # 'о том, что Анна чихнула' r=>p 'o tym, że Anna kichnęła'
+    # 'o tym, że dziewczyna kichnęła' p=>r 'о том, что девушка чихнула'
+    if($k := find("ZR","#") and $k->Korelat)
+    {
+
+	$k->Equiv := "то";
+
+	$k->R := 5;
+	$k->Inflection := "ZR-R!";
+    }
+
+    'nawzajem' => 'друг друга' {}
+
+    # 'ku sobie nawzajem' p=>r 'друг к другу'
+    if(find('друг друга',))
+    {
+	PrePrep := 'друг';
+	find("ZR","#")->Equiv := "друг";
+	find("ZR","#")->Inflection := "R!";
+	L := 1;
+	find("ZR","#")->LWymuszone := 1;
+	delete('друг друга',);
+    }
+
+
+
+    %Głowa [ label() = "#" ];
+
+    if(%Głowa->OWymuszone)
+	O := %Głowa->O;
+    else if(@.O and @.O != nil)
+	O := @.O;
+    else
+	inherit("O",3);
+    
+    if(%Głowa->LWymuszone)
+	L := %Głowa->L;
+    else if(@.L)
+	L := @.L;
+    else
+	inherit("L",nil);
+
+    if(@.P and @.P != nil)
+	P := pl_to_latin(@.P);
+    else
+	inherit("P","N");
+
+    if(@.S)
+	S := @.S;
+    else
+	inherit("S",any);
+
+    if(@.Neg)
+	Neg := 1;
+    else
+	inherit("Neg",);
+    if(%Głowa)
+    {
+	if(undefined(Dop1) and %Głowa->Dop1)
+	{
+	    Dop1 := %Głowa->Dop1;
+	    Przyim1 := %Głowa->Przyim1;
+	}
+	if(undefined(Dop2) and %Głowa->Dop2)
+	{
+	    Dop2 := %Głowa->Dop2;
+	    Przyim2 := %Głowa->Przyim2;
+	}
+    }
+if($DOP := find(,dop1))
+    {
+	if($DOP.cat() = "UFR")
+	{
+	    $DOP.Przyim := Przyim1;
+	    $DOP.P := Dop1;
+	}
+	if($DOP.cat() = "AP")
+	{
+	    if(Dop1 = "AV")
+	    {
+		$DOP.Adv := true;
+	    }
+	}
+	if($DOP.cat() = "ZPODRZ" or $DOP.cat() = "FC")
+	{
+	    $DOP.Typ := Dop1;
+	    $DOP.Przyim := Przyim1;
+	}
+    }
+if($DOP := find(,dop2))
+    {
+	if($DOP.cat() = "UFR")
+	{
+	    $DOP.Przyim := Przyim2;
+	    $DOP.P := Dop2;
+	}
+	if($DOP.cat() = "AP")
+	{
+	    if(Dop2 = "AV")
+	    {
+		$DOP.Adv := true;
+	    }
+	}
+	if($DOP.cat() = "ZPODRZ" or $DOP.cat() = "FC")
+	{
+	    $DOP.Typ := Dop2;
+	    $DOP.Przyim := Przyim2;
+	}
+    }
+}
+
+#
+#
+sub ::rtocode(r)
+{
+    if($r = "mo") return 1;
+    if($r = "mż") return 2;
+    if($r = "mnż") return 3;
+    if($r = "mno") return 3;
+    if($r = "ż") return 4;
+    if($r = "n") return 5;
+
+    if($r = nil) return 3;
+
+    warning("nieznane oznaczenie rodzaju: "+$r);
+    return $r;
+}
+
+#!!! TRACE sen.t
+
+#
+
+
+#!!! TRACE spojnik.t
+
+#
+
+S => S
+{
+    O := @.O;
+    L := @.L;
+}
+
+#!!! TRACE zdania.m
+
+#
+
+sub ZWZGL::propagate_gender_rel_clause(rodzaj)
+{
+    find("FC",)->propagate_gender_rel_clause($rodzaj);
+}
+
+sub ZWZGL::propagate_num_rel_clause(liczba)
+{
+    find("FC",)->propagate_num_rel_clause($liczba);
+}
+
+#!!! TRACE zdania.t
+
+#
+
+Z => Z
+{
+}
+
+ZJAK => ZJAK
+{
+
+	'$jak' => 'как' { Equiv := "как"; }
+}
+
+:prerel => :prerel {}
+
+ZWZGL => ZWZGL
+{
+}
+
+ZBY => ZBY
+{
+}
+
+ŻE => ŻE
+{
+}
+
+SFC => SFC
+{
+}
+
+#
+#
+FCs => FCs
+{
+    $o := find("S",)->O;
+    if($o = 1 or $o = 2) {
+	find("FC",)->O := $o;
+	find("FC",)->find("C","#")->O := $o;
+	find("FC",)->insert_pers_pronoun();
+    }
+}
+
+KORELAT => KORELAT
+{
+
+}
+
+#!!! TRACE ../../co/trules/czasownik.i
+
+#
+
+#
+sub::getlexname(canon,name)
+{
+    # 'you have to jump' e=>p 'musisz skoczyć' 
+    if($name =~ /_/)
+        return $name;
+    else
+        return $canon + "_" + $name;
+}
+
+sub C::verb_inflection(canon,asp,name)
+{
+    # domyślne wartości przy braku podmiotu
+    # 'will be applying the computer' e=>p 'będzie stosować komputer'
+    if(C = "przyszły" and undefined(O) and undefined(L) and undefined(R)) 
+    {
+        O := 3;
+        L := 1;
+        R := 3;
+    }
+
+    if(C = rozkazujący and (O = 3 or (O = 1 and L = 1))) {
+        if(A = ndk)
+            C := teraźniejszy;
+        else
+            C := "przyszły";
+    }
+    # 'jestem tutaj' p=>r 'я тут'
+    # 'jesteś niegrzeczna' p=>r 'ты невежливая'
+    # 'jesteśmy Polakami' p=>r 'мы - поляки'
+    if($canon = "быть" and C = teraźniejszy) {
+        if (parent()->find("UFR",dop1)->P = "N")
+            return "-";
+        return "";
+    }
+
+    if(C = przypuszczający) {
+        C := "przeszły";
+        $partykuła := "бы";
+    }
+    if(C = "przeszły" and (O = 1 or O = 2)) {
+        O := 3;
+    }
+
+
+    # 'надо было скакать' r=>p 'trzeba było skakać'
+    if(Pred)
+    {
+        if(C = "przeszły")
+            return $canon & $partykuła & "было";
+        if(C = "przyszły")
+            return $canon & "будет";
+        return $canon;
+    }
+
+    $f := "BZK";
+
+    if((C = imiesłów_bierny and $N := 10) or 
+       (C = imiesłów_czynny and $N := 11))
+    {
+        # 'the system being analyzed' e=>p 'analizowany system'
+        # 'electrically powered appliance' e=>p 'urządzenie elektrycznie zasilane'
+        if(Strona = bierna)
+            $N := 10;
+
+        if(A = dk and C = imiesłów_czynny)
+        {
+            warning('UNEXPECTED: verb_inflection - A = dk and C = imiesłów_czynny 1');
+            # czasownik tylko dokonany, nie ma imiesłowu czynnego
+            # stosujemy wyjście awaryjne
+            # @todo wymyśleć    
+        }
+
+        if(R and L)
+        {
+            if(P)
+                return pair(getlexname($canon, $name),
+                get_morpho_ru($N,R,L,0,ptocode(P)));
+
+            return pair(getlexname($canon, $name),
+            get_morpho_ru($N,R,L,0,1));
+        }
+
+        return pair(getlexname($canon, $name),
+            get_morpho_ru($N,3,1,0,1));     
+    }
+
+
+    if(Strona = bierna)
+    {
+        # formy imiesłowu w mianowniku i narzędniku
+
+        # 'programmers were killed' e=>p 'programiści zostali zabici'
+        # 'five programmers were killed' e=>p 'pięciu programistów zostało zabitych'
+        # 'the glass would be frozen' e=>p 'szkło zostałoby zamrożone'
+        # 'these doors must be shut' e=>p 'te drzwi muszą zostać zamknięte'
+        if(parent()->PodmiotKPD)
+        {
+            $im := pair(getlexname($canon,$name),
+                "IBR" + krótka_forma(R,L));
+        
+            $imN := $im;
+        }
+        else
+        {
+            $im := pair(getlexname($canon,$name),
+                "IBR" + krótka_forma(R,L));
+            $imN := pair(getlexname($canon,$name),
+                 get_morpho_ru(10,R,L,0,5));
+        }
+        if(M)
+        {
+            $bim := 'быть' & $im;
+
+    }
+
+    if(C = "przeszły")
+    {
+        return pair("быть_C",get_morpho_ru(2,R,L,O,0)) & $partykuła & $im;
+    }
+        if(C = teraźniejszy) {
+            # pomijamy "być" w czasie teraźniejszym
+            return $im;
+        }
+        else if(C = uprzednik)
+        {
+            return "бывши" & $imN;
+        }
+        else if (C = współcześnik) 
+        {
+            return "во время" & pair(getlexname($canon,$name), get_morpho_ru(12,0,1,0,ptocode("G")));
+        }     
+        else if(C = odsłownik)
+        {
+            return pair("быть_C",get_morpho_ru(12,0,L,0,ptocode(P))) & $imN;
+        }
+        else if(C = teraźniejszy)
+        {
+            return pair("быть_C",get_morpho_ru(3,R,L,O,0)) & $im;
+        }
+        else if(C = "przyszły")
+        {
+            return pair("быть_C",get_morpho_ru(16,R,L,O,0)) & $im;
+        }
+        else if(C = przypuszczający)
+        {
+#
+        }
+
+        return "быть" & imN;
+    }
+
+    # 'he must not have killed them' e=>p 'nie mógł zabić ich'
+    if(M)
+    {
+        if(M = "móc" or M = musieć and parent()->Neg)
+        {
+            if(C = "przeszły")
+                return pair("móc_C", get_morpho_ru(2,R,L,O,0)) & $canon;
+            else if(C = teraźniejszy)
+                # 'you must not read this book' e=>p 'nie możesz czytać tej książki'
+                return pair("móc_C", get_morpho_ru(3,R,L,O,0)) & $canon;
+
+            else if(C = "przyszły")
+            {
+                warning('UNEXPECTED: co else if(C = "przyszły")');
+                return pair("być_C",get_morpho_ru(16,R,L,O,0)) & pair("móc_C", get_morpho_ru(2,R,L,O,0)) & $canon;
+            }
+            if(C = przypuszczający)
+                # 'Could you have the baggage sent up' e=>p 'Mógłbyś mieć posłany bagaż'
+                return pair("móc_C", get_morpho_ru(7,R,L,O,0)) & $canon;
+            else if(C = bezosobnik)
+                # 'it may have been interrupted' e=>p 'to można było przerwać'
+                return "można" & "było" & $canon;
+
+            return "móc" & $canon;
+        }
+    
+        if(M = "musieć")
+        {
+            if(C = "przeszły")
+                # 'he must have killed them' e=>p 'musiał zabić ich'
+                return pair("musieć_C", get_morpho_ru(2,R,L,O,0)) & $canon;
+            else if(C = teraźniejszy)
+                # 'you must read this book' e=>p 'musisz czytać tę książkę'
+                return pair("musieć_C", get_morpho_ru(3,R,L,O,0)) & $canon;
+            else if(C = "przyszły")
+            {
+                warning('UNEXPECTED: co Mus - else if(C = "przyszły")');
+                return pair("być_C",get_morpho_ru(16,R,L,O,0)) & pair("musieć_C", get_morpho_ru(2,R,L,O,0)) & $canon;
+            }
+            if(C = przypuszczający)
+            {
+                warning('UNEXPECTED: co Mus - if(C = przypuszczający)');
+                return pair("musieć_C", get_morpho_ru(7,R,L,O,0)) & $canon;
+            }
+            else if(C = bezosobnik)
+            {
+                warning('UNEXPECTED: co Mus - C = bezosobnik');
+                return "trzeba" & "było" & $canon;
+            }    
+            return "musieć" & $canon;
+        }
+
+        if(M = powinien)
+            # 'nurse should be sympathetic' e=>p 'pielęgniarka powinna być pełna współczucia'
+            return pair("powinien_C", get_morpho_ru(14,R,L,O,0)) & $canon;
+    }
+
+    # 'она должна сделать' r=>p 'ona powinna zrobić'
+    if(Powinien)
+        # 'Is that supposed to be 20 euro?' e=>p 'To powinno być 20 euro?'
+        return pair(getlexname($canon,$name), get_morpho_ru(14,R,L,O,0));
+
+    if(C = "przeszły")
+        # 'he killed' e=>p 'zabił'
+        $f := get_morpho_ru(2,R,L,O,0);
+    else if(C = teraźniejszy)
+    {
+        # dla czasowników dokonanych błędnie zostanie wygenerowany
+        # czas przyszły, ale skoro już nie dotarliśmy do tego miejsca,
+        # to nie mamy wyjścia
+
+        # 'he is killing' e=>p 'on zabija'
+        $f := get_morpho_ru(3,R,L,O,0);
+    }
+    else if(C = "przyszły")
+    {
+        if($asp = dk)
+            $f := get_morpho_ru(3,R,L,O,0);
+        else if($canon = "быть")
+            return pair("быть_C",get_morpho_ru(16,R,L,O,0));
+        else
+            return pair("быть_C",get_morpho_ru(16,R,L,O,0)) & $canon;
+    }
+    else if(C = przypuszczający)
+        # 'it would be beautiful day' e=>p 'to byłby piękny dzień'
+        $f := get_morpho_ru(7,R,L,O,0);
+    else if(C = bezosobnik)
+        # 'about effects reported to Marta' e=>p 'o efektach poinformowano Martę'
+        $f := "BZS";
+    # @todo: ujednolicić
+    else if(C = współcześnik or C = imiesłów_współczesny)
+        # 'Washing up, she listened to the radio.' e=>p 'Zmywając, słuchała radia.'
+        $f := "WSP";
+    else if(C = uprzednik or C = imiesłów_uprzedni)
+    {
+        if(A != ndk)
+            # 'Having get dressed, he ran out quickly.' e=>p 'Ubrawszy się, wybiegł szybko.'
+            $f := "UPD";
+        else
+            # rozwiązanie awaryjne, jeśli czasownik nie występuje w aspekcie dokonanym
+            # wymaga wywołania acc_to_gen() w m-regułach
+        return "после" & pair(getlexname($canon,$name), get_morpho_ru(12,0,1,0,ptocode("G")));          
+
+    }
+    else if(C = odsłownik)
+        # 'it was enabling to drive the car' e=>p 'to umożliwiało prowadzenie samochodu'
+        return pair(getlexname($canon,$name),
+            get_morpho_ru(12,0,1,0,ptocode(P)));
+    else if(C = rozkazujący)
+    {
+        # 'take the book' e=>p 'weź książkę'
+#
+        if(L = 2)
+        {
+            if(O = 1)
+                return pair(getlexname($canon,$name),
+                   "RM1");
+
+            if(O = 2)
+                return pair(getlexname($canon,$name),
+                   "RM2");
+        }
+        return pair(getlexname($canon,$name),
+           "RP2");
+    }
+    if ($partykuła)
+    {
+        warning('UNEXPECTED: if ($partykuła) 9');
+        return pair(getlexname($canon,$name),$f) & $partykuła;
+    }
+    return pair(getlexname($canon,$name),$f);
+}
+
+sub C::main_inflection(canon,name)
+{    
+
+    if($canon =~ "^([^ ]+) +([^ ].+)")
+    {
+        warning('UNEXPECTED: co $canon =~ "^([^ ]+) +([^ ].+)"');
+        $glowa := $1;
+        $reszta := $2;
+    }
+    else
+    {
+        warning('UNEXPECTED: co else $canon =~ "^([^ ]+) +([^ ].+)"');
+        $glowa := $canon;
+    }
+
+    if($glowa =~ "^([^ /]+)/+([^ ]+)")
+    {
+        $lewy := $1;
+        $prawy := $2;
+
+        $wybrany := $lewy;
+
+        if(A = "dk/ndk")
+        {
+            if(ASyn = ndk)
+            {
+                warning('UNEXPECTED: co ASyn = ndk 1');
+                $wybrany := $prawy;
+                $wybranyasp := ndk;
+            }
+            else
+            {
+                warning('UNEXPECTED: co else ASyn = ndk 1');
+                $wybranyasp := dk;
+            }
+        }
+        else if(A = "ndk/dk")
+        {
+            if(ASyn = dk)
+            {
+                warning('UNEXPECTED: co ASyn = dk 1');
+                $wybrany := $prawy;
+                $wybranyasp := dk;
+            }
+            else
+            {
+                warning('UNEXPECTED: co else ASyn = dk');
+                $wybranyasp := ndk;
+            }
+        }
+        if($reszta)
+        {
+            warning('UNEXPECTED: co $reszta');
+            return verb_inflection($wybrany,$wybranyasp,$name) & $reszta;
+        }
+        return verb_inflection($wybrany,$wybranyasp,$name);
+    }        
+    if($reszta)
+    {
+        warning('UNEXPECTED: co $reszta 2');
+        return verb_inflection($glowa,A,$name) & $reszta;
+    }
+    return verb_inflection(Equiv,A,$name);
+}
+
+sub ::flag_to_num(f)
+{
+    if($f = "m")
+    {
+        warning('UNEXPECTED: co $f = "m"');
+        return 2;
+    }
+    return 1;
+}
+
+sub C::inflection(w,i)
+{
+    # 'she is wise after the event' e=>p 'ona jest mądra po szkodzie'
+    # 'she was the baby of the family' e=>p 'była najmłodsza w rodzinie'
+    if($i =~ /(.*):o$/)
+    {
+        $n := $1;
+
+        $N := mtocode("P");
+
+        if($n =~ /^(.*)-(P[NW]|IBR|ICZ)/)
+        {
+            # 'being made available' e=>p 'zostać udostępnionym'
+            $n := $1;
+            $N := mtocode($2);
+        }
+
+        if(P and C = imiesłów_czynny)
+        {
+            warning('UNEXPECTED: co P and C = imiesłów_czynny');
+            $p := P;
+        }
+        else
+            $p := "N";
+
+        if(R and L)
+            return pair($n, get_morpho_ru($N,R,L,0,ptocode($p)));
+    
+        return $w;
+    }
+
+    if($i =~ /(.*):(.)(.)d$/)
+    {
+        $lex := $1;
+        $g := $2;
+        $n := $3;
+
+        $mcode := mtocode("R");
+    
+        $name := $w;
+
+        if($lex =~ /^(.*_|(?:))([A-Z]+[0-9]*)-?([A-Z]*)/)
+        {
+            $ia := $1; $ib := $2; $ic := $3;
+        
+            if($ic != "")
+            {
+                warning('UNEXPECTED: co $ic != "" czasownik');
+                $mcode := mtocode($ic);
+            }
+            else
+                $mcode := mtocode($ib);
+
+            if($ia != "")
+                $name := $ia + $ib;
+            else
+            {
+                warning('UNEXPECTED: co else $ia != "" czasownik');
+                $name := $w + "_" + $ib;
+            }
+        }
+ 
+        # 'he was right' e=>p 'miał rację'
+        # 'he was not right' e=>p 'nie miał racji'
+        if(parent()->AtoG or parent()->Neg = 1)
+            return pair($name, get_morpho_ru($mcode,
+                     atoi($g),
+                     flag_to_num($n),
+                     0,
+                     ptocode("G")));
+
+        return $w;
+    }
+
+    if($i =~ /^([^!:-]+)(:b)?!?$/)
+    {
+        $kod := $1;
+
+        if($w =~ "^([^ /]+)/+([^ ]+)")
+        {
+            $lewy := $1;
+            $prawy := $2;
+
+            $wybrany := $lewy;
+
+            $wybranykod := $kod;
+
+            if($kod =~ "^([^ ]+)/([^ ]+)")
+            {
+                warning('UNEXPECTED: co $kod =~ "^([^ ]+)/([^ ]+)"');
+                $prawykod := $2;
+                $wybranykod := $1;
+            }
+
+            if(A = "dk/ndk")
+            {
+                if(ASyn = ndk)
+                {
+                    # 'What I don~t understand is why people take her so seriously' e=>p 'Nie rozumiem tylko dlaczego ludzie biorą ją tak poważnie'
+                    $wybrany := $prawy;
+                    $wybranyasp := ndk;
+    
+                    if($prawykod)
+                    {
+                        warning('UNEXPECTED: co $prawykod 2');
+                        $wybranykod := $prawykod;
+                    }
+                }
+                else
+                    # 'John Smith said' e=>p 'John Smith powiedział'
+                    $wybranyasp := dk;
+            }
+            else if(A = "ndk/dk")
+            {
+                if(ASyn = dk)
+                {
+                    # 'you promised me the brightest star' e=>p 'obiecałeś mi najjaśniejszą gwiazdę'
+                    $wybrany := $prawy;
+                    $wybranyasp := dk;
+
+                    if($prawykod)
+                    {
+                        warning('UNEXPECTED: co $prawykod 2');
+                        $wybranykod := $prawykod;
+                    }
+                }
+                else
+                    # 'install PHP 4' e=>p 'instalować PHP 4'
+                    $wybranyasp := ndk;
+            }
+            else
+            {
+                warning('UNEXPECTED: co else A = "ndk/dk" 2');
+                $wybranyasp := ndk;
+            }
+
+            return verb_inflection($wybrany,$wybranyasp,$wybranykod);
+        }
+        if(Zwr) {
+            $w := $w + "ся";
+        }
+
+    if(A)
+        # 'these three pairs of binoculars are expensive' e=>p 'te trzy lornetki są drogie'
+        return verb_inflection($w,A,$kod);
+    else
+        # 'She was gonna give a speech' e=>p 'Miała zamiar wygłosić przemówienie'
+       return verb_inflection($w,ndk,$kod); 
+    }
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+#
+sub ::zero_inflection(e)
+{
+    # 'She was gonna give a speech' e=>p 'Miała zamiar wygłosić przemówienie'
+    # usuwamy zbędne spacje z początku
+    if($e =~ /^ +(.*)$/)
+        $e := $1;
+
+    # kolejno odrywamy wyrazy...
+    # @todo uwzględnić inne znaki interpunkcyjne
+    if($e =~ /^([^, ]+)(.*)$/ or
+       $e =~ /^(,)(.*)$/)
+    {
+        $er := $2;
+
+        return zero_inflection($er) + " 0"; 
+    }
+    else
+        return "";
+}
+
+
+sub C::surface()
+{
+    if(Inflection and Inflection != "")
+        # 'these three pairs of binoculars are expensive' e=>p 'te trzy lornetki są drogie'
+        return inflection_cycle(Equiv, Inflection);
+
+    # brak tinflection - rozwiązanie awaryjne
+    if(Equiv =~ /^([^ ]+)( .*)$/)
+        # 'She was gonna give a speech' e=>p 'Miała zamiar wygłosić przemówienie'
+        return inflection_cycle(Equiv, "C! " + zero_inflection($2));
+
+    return inflection(Equiv,"C");
+}
+
+sub FC::surface()
+{
+    if(Typ == "BY")
+    {
+        $first_subtree := first_subtree();
+
+        if(%Podmiot and
+           %Podmiot->O != 3)
+        {
+            warning('UNEXPECTED: co %Podmiot and 2');
+            $o := O;
+            O := 3; propagate_person();
+
+            if($first_subtree->cat() = ',')
+            {
+                warning('UNEXPECTED: co $first_subtree->cat() = ,');
+                $BY := $first_subtree->insert_after("S",);
+            }
+            else
+                # 'too shy to talk to her' e=>p 'zbyt nieśmiały, by rozmawiać z nią'
+                $BY := insert_left("S",);
+
+            $BY->Equiv := "by";
+            $BY->Inflection := "a";
+            $BY->L := L;
+            $BY->O := $o;
+
+            return gensurface();
+        }
+
+        if($dlabk := find(,dlabk))
+        {
+            warning('UNEXPECTED: co $dlabk := find(,dlabk)');
+            $BY := $dlabk->insert_after("S",);
+        }
+        else if($first_subtree->cat() = ',')
+        {
+            warning('UNEXPECTED: co $first_subtree->cat() = ,');
+            $BY := $first_subtree->insert_after("S",);
+        }
+        else
+        {
+            warning('UNEXPECTED: co else $first_subtree->cat() = ,');
+            $BY := insert_left("S",);
+        }
+        $BY->Equiv := "by";
+        return gensurface();
+    }
+
+    if(C = odsłownik)
+    {
+        if(Przyim and Przyim != "brak")
+        {
+            # 'I~m busy taking care of things' e=>p 'Jestem zajęty opiekowaniem się rzeczami'
+            $PR := insert_left("PR",);
+            $PR->Equiv := strip_quotes(Przyim);    
+        }
+
+        return gensurface();
+    }
+
+    return gensurface();
+}
+
+#
+#
+
+sub C::variant(model)
+{
+    warning('UNEXPECTED: co variant');
+    if($model->C)
+        C := $model->C;
+
+    if($model->P)
+        P := $model->P;
+
+    if($model->R)
+        R := $model->R;
+
+    if($model->L)
+        L := $model->L;
+
+    if($model->O)
+        O := $model->O;
+}
+
+#
+
+sub ::krótka_forma(r,l)
+{
+    if($l = 2)
+        return "MżKM";
+
+    if($r = 2 or $r = 3)
+        return "MżKP";
+
+    if($r = 4)
+        return "ŻKP";
+
+    if($r = 5)
+        return "NKP";
+}
+
+
+#!!! TRACE ../../co/trules/czasownik.m
+
+#
+
+sub FC::propagate_tense()
+{
+    %Glowa->C := C;
+    %Glowa->ASyn := ASyn;
+    %Glowa->M := M;
+    %Glowa->propagate_tense();    
+    foreach $Cs
+    {
+        if ($Cs->cat() = "Cs")
+        {
+            # 'refresh the website and wait' e=>p 'odśwież serwis internetowy i poczekaj'
+            $Cs->find("FC",)->C := C;
+            $Cs->find("FC",)->ASyn := ASyn;
+            $Cs->find("FC",)->M := M;
+            $Cs->find("FC",)->propagate_tense();    
+        }    
+    }
+
+    # 'I knew she liked me' e=>p 'Wiedziałem, że lubi mnie'
+    # 'I knew she would kill me' e=>p 'Wiedziałem, że zabije mnie'
+    # 'I knew she had killed him' e=>p 'Wiedziałem, że zabiła go'
+    if($dop3 := find("FC",dop3) and
+       $dop3->Typ = "TH" and
+       C = "przeszły")
+    {
+        if($dop3->C = "przeszły" and not $dop3->Zaprzeszły)
+        {
+            $dop3->C := teraźniejszy;
+            $dop3->ASyn := ndk;
+            $dop3->propagate_tense();
+        }
+
+        if($dop3->C = przypuszczający)
+        {
+            $dop3->C := "przyszły";
+            $dop3->propagate_tense();
+        }
+    }
+}
+
+sub ::propagate_tense()
+{
+}
+
+sub FC::ajcompl(s,c)
+{
+    if($as := find("UFR",dop1) or
+       $as := find("UFR",dop2) or
+       $as := find("UFR",dop3))
+    {
+        warning('UNEXPECTED: ajcompl - $as := find("UFR",dop1) or');
+        $s := $as;
+    }
+
+    # 'the person being stupid' e=>p 'osoba będąca głupia'
+    if(C != bezokolicznik and $c->P = "I")
+        $c->P := "N";
+
+    $c->propagate_case();
+
+    if($s->R and $s->R != nil)
+    {
+        $c->R := $s->R;
+        $c->propagate_gender();
+    }
+    else if(R and L)
+    {
+        # 'is essential for all those activities' e=>p 'jest niezbędny do wszystkich tych działalności'
+        # 'ты была красива' r=>p 'byłaś piękna'
+        $c->R := R;
+        $c->propagate_gender();
+        $c->L := L;
+        $c->propagate_num();
+    }
+
+    if($s->L)
+    {
+        $c->L := $s->L;
+        $c->propagate_num();
+    }
+}
+
+#
+#
+sub FC::acc_to_gen()
+{
+    if(%Dop1->cat() = "UFR" and %Dop1->P = "A" and not %Dop1->Przyim)
+    {
+        # 'I like neither Anna, nor Karolina' e=>p 'Nie lubię ani Anny ani Karoliny'
+        %Dop1->P := "G";
+        %Dop1->propagate_case();
+    }
+    else if(%Dop2->cat() = "UFR" and %Dop2->P = "A" and not %Dop2->Przyim)
+    {
+        warning('UNEXPECTED: acc_to_gen - %Dop2->cat() = "UFR" and %Dop2->P = "A" and not %Dop2->Przyim');
+        %Dop2->P := "G";
+        %Dop2->propagate_case();
+    }
+    else if(%Dop3->cat() = "UFR" and %Dop3->P = "A" and not %Dop3->Przyim)
+    {
+        warning('UNEXPECTED: acc_to_gen - %Dop3->cat() = "UFR" and %Dop3->P = "A" and not %Dop3->Przyim');
+        %Dop3->P := "G";
+        %Dop3->propagate_case();
+    }
+
+    AtoG := 1;
+}
+
+
+sub ::count_nodes()
+{
+    # 'widziałem w sklepie Marka' p=>e 'I could see Marek in the shop'
+    if(Equiv)
+        return 1;
+
+    $c := 0;
+
+    foreach $s
+        $c := $c + $s->count_nodes();
+
+    return $c;
+}
+
+sub ::count_words()
+{
+    # 'msza święta celebrowana zwykle rano' p=>e 'Holy Mass celebrated usually in the morning'
+    if(Equiv)
+        return count_words_in_equiv(Equiv);
+
+    $c := 0;
+
+    foreach $s
+        $c := $c + $s->count_words();
+
+    return $c;
+}
+
+sub ::count_words_in_equiv(e)
+{
+    # 'msza święta celebrowana zwykle rano' p=>e 'Holy Mass celebrated usually in the morning'
+    if($e =~ /^[^ ]+ (.*)$/) 
+        return count_words_in_equiv($1) + 1 ;
+    else if($e =~ /[^ ]/)
+        return 1;
+    else
+        # 'ustawy przyjęte na mocy niniejszego artykułu' p=>e 'bills passed by virtue of the present article'
+        return 0;
+}
+
+#!!! TRACE ../../co/trules/czasownik.t
+
+#
+
+#
+Hk => Hk { Equiv := "";}
+
+#
+#
+sub ::pro_hks(p)
+{
+    $with_slots := 0;
+#
+    foreach $s
+    {
+        if($s->cat() = "Hk")
+        {
+if($slot := $s->find(,slot1))
+            {
+                warning("UNEXPECTED: co 1: pro_hks");
+                $s->delete($slot,);
+                $p->insert_right($slot,);
+                $slot->change_label(slot1);
+                $with_slots := 1;
+            }
+if($slot := $s->find(,slot2))
+            {
+                warning("UNEXPECTED: co 2: pro_hks");
+                $s->delete($slot,);
+                $p->insert_right($slot,);
+                $slot->change_label(slot2);
+                $with_slots := 1;
+            }
+if($slot := $s->find(,slot3))
+            {
+                warning("UNEXPECTED: co 3: pro_hks");
+                $s->delete($slot,);
+                $p->insert_right($slot,);
+                $slot->change_label(slot3);
+                $with_slots := 1;
+            }
+        }
+    }
+
+if($s := find(,slot1))
+    {
+        warning("UNEXPECTED: co 1: pro_hks2");
+        delete($s,);
+        $p->insert_right($s,);
+        $s->change_label(slot1);
+        $with_slots := 1;
+    }
+if($s := find(,slot2))
+    {
+        warning("UNEXPECTED: co 2: pro_hks2");
+        delete($s,);
+        $p->insert_right($s,);
+        $s->change_label(slot2);
+        $with_slots := 1;
+    }
+if($s := find(,slot3))
+    {
+        warning("UNEXPECTED: co 3: pro_hks2");
+        delete($s,);
+        $p->insert_right($s,);
+        $s->change_label(slot3);
+        $with_slots := 1;
+    }
+
+    return $with_slots;
+}
+
+
+#
+sub ::target_info_for_slots(e,n)
+{
+    # @todo \[[123]\] !!!!!!
+    if($e =~ /^([^\$]*)\$([^\$]+)\$(.*)/)
+    {
+        $rf := $2;
+        $rr := $3;
+        $rn := $n;
+
+        if($rf =~ /^(.*)\[([123])\]/)
+        {
+            warning('UNEXPECTED: target_info_for_slots - if($rf =~ /^(.*)\[([123])\]/)');
+            $rf := $1;
+            $rn := $2;
+        }
+
+        set_target_info_for_slots($rf,find(,"slot"+$rn));
+
+        target_info_for_slots($rr,$n+1);
+    }
+}
+
+
+
+
+#!!! TRACE ../../co/trules/fleksja.i
+
+#
+
+
+#!!! TRACE ../../co/trules/liczebnik.i
+
+#
+
+sub LG::surface()
+{
+    $p := ptocode(P);
+
+    if(Oje)
+        # 'children, six of which hated me' e=>p 'dzieci, z których sześcioro nienawidziło mnie'
+        return pair(Equiv + "_LG",get_morpho_ru(9,0,0,0,$p));
+
+    # 'один чемодан' r=>p 'jedna walizka'
+    # 'jedno dziewczę' p=>r 'одна девушка'
+
+    if(Typ = 1 and Inflection = "ZP!")
+    {
+        warning('UNEXPECTED: co Typ = 1 and Inflection = "ZP!"');
+        return pair(Equiv + "_ZP",get_morpho_ru(mtocode("ZP"),R,L,0,$p));
+    }
+
+    $m := get_morpho_ru(8,R,0,0,$p);
+
+    if(Typ = 2 and ($p = 1 or $p = 4) and R != 1)
+        # 'three small pigs' e=>p 'trzy małe świnie'
+        $m := "z" + $m;
+
+    return pair(Equiv + "_LG",$m);
+}
+
+
+#!!! TRACE ../../co/trules/przymiotnik.i
+
+
+
+#
+#
+
+#
+sub P::variant(model)
+{
+    warning('UNEXPECTED: co P::variant');
+    if($model->P)
+        P := $model->P;
+    
+    if($model->L)
+        L := $model->L;
+
+    if($model->R)
+        R := $model->R;
+
+    if($model->Stopień)
+        Stopień := $model->Stopień;
+}
+
+#
+
+
+#!!! TRACE ../../co/trules/rzeczownik.i
+
+#
+
+sub ::get_first_word()
+{
+    if(Equiv)
+        return Equiv;
+    else
+        return find(,)->get_first_word();
+}
+
+
+sub UFR::surface()
+{
+    if(Przyim and Przyim != "brak")
+    {
+        $prep := strip_quotes(Przyim);
+        
+        # 'with me' e=>p 'ze mną'
+        # 'regardless of me' e=>p 'niezależnie ode mnie'
+        # 'for me' e=>p 'dla mnie'
+        if($ZR := find("ZR","#") and
+           $ZR->Equiv = "я")
+            $prep := wokalizuj($prep);
+            # 'in France' e=>p 'we Francji'
+        else if($prep = "в" or
+           $prep =~ / в$/)
+        {
+            $fw := lc(get_first_word());
+            if($fw =~ /^[вфВФ]/)
+                $prep := $prep + "о";
+        }
+        # 'with spinach' e=>p 'ze szpinakiem'
+        # 'with a healthy thing' e=>p 'ze zdrową rzeczą'
+        # 'with a good spinach' e=>p 'z dobrym szpinakiem'
+        else if($prep = "с" or
+           $prep =~ / с$/)
+        {
+            $fw := lc(get_first_word());
+            if($fw =~ /^([зсЗС]|[Вв][Сс][ЕЁеё])/)
+                $prep := $prep + "о";
+        }
+        else if ($prep = "о" or
+                 $prep =~ / о$/)
+        {
+            $fw := lc(get_first_word());
+            if($fw =~ /^[аеёиоуыэюяАЕЁИУЭЮЯ]/)
+                $prep := $prep + "б";
+            if($fw =~ /^[Вв][Сс][ЕЁеё]/)
+                $prep := $prep + "бо";
+        }
+        $PR := insert_left("PR",);
+        $PR->Equiv := $prep;    
+    }
+
+    if(PrePrep)
+    {
+        insert_left(PrePrep,preprep);
+    }
+
+    if((find("ZWzgl","#") or find("ZWzgl","dzierżawczy"))
+       and parent()->parent()->cat() = "UFR")
+        insert_left(',',);
+    return gensurface();
+}
+
+
+
+#
+#
+
+sub R::variant(model)
+{
+    if($model->P)
+        P := $model->P;
+}
+
+#
+
+#
+#
+sub ::gather_surf()
+{
+    # 'will you be getting fresh with this girl?' e=>p 'będziesz przystawiać się do tej dziewczyny?'
+    if(not undefined(Surf))
+        return Surf;
+
+    foreach $s
+        $L := $L & $s->gather_surf();
+
+    return $L;
+}
+
+
+
+sub ::wokalizuj(p)
+{
+    if($p =~ /.*[ _](.*)$/)
+        $q := $1;
+    else
+        $q := $p;
+
+    if($q = "над" or
+       $q = "под" or
+       $q = "перел" or
+       $q = "в" or
+       $q = "с")
+        return $p + "о";
+    if($q = "о")
+        return "обо";
+    return $p;
+}
+
+#!!! TRACE ../../co/trules/rzeczownik.m
+
+#
+
+
+sub ZR::inflection(w,i)
+{
+    # instrukcja fleksyjna składa się z pięciu członów
+    if($i =~ /^(.*_|(?:))([A-Za-z]+[0-9]*)-?([A-Za-z]*)(:[0-9lu]+|(?:))(!?)$/)
+    {
+        $ia := $1; $ib := $2; $ic := $3; $id := $4; $ie := $5;
+
+        if($ia != "")
+            # 'she put oneself to shame' e=>p 'zrobiła sobie wstyd'
+            $name := $ia + $ib;
+        else
+            $name := $w + "_" + $ib;
+
+        if($ic != "")
+            $mcode := mtocode($ic);
+        else
+            # 'one' e=>p 'jeden'
+            $mcode := mtocode($ib);
+    
+        if($id != "" and $id =~ /^:([0-9])/)
+            # 'They all went quiet and looked at Jane' e=>p 'Wszyscy zamilkli i patrzeli na Jane'
+            $r := atoi($1);
+        else
+            $r := R;
+
+        if($id != "" and $id =~ /^:.([0-9])/)
+            $l := atoi($1);
+        else
+            $l := L;
+
+        if($id =~ /^:.*l/)
+        {
+            if(PKod = 1 or PKod = 4)
+                # 'This includes OmniHTTPd and many others' e=>p 'To obejmuje OmniHTTPd i wielu innych'
+               PKod := 2;
+        }
+
+        if($id != "" and $id =~ /^:.*u$/)
+        {
+            warning('UNEXPECTED: co $id != "" and $id =~ /^:.*u$/');
+            return pair($name,"u" + get_morpho_ru($mcode, $r, $l, 0, PKod));
+        }
+        else
+            return pair($name,get_morpho_ru($mcode, $r, $l, 0, PKod));
+    }
+
+    warning("błędna instrukcja fleksyjna:");
+    warning($i);
+
+    return $w;
+}
+
+sub ZR::surface()
+{
+   if(Typ != osobowy)
+    {
+        if(P = "P")
+        {
+            warning('UNEXPECTED: co P = "P" 1');
+            P := "G";
+        }
+        PKod := ptocode(P);
+
+        # 'I will do it by myself' e=>p 'Zrobię to samemu'
+        if(Inflection and Inflection != "")
+            return inflection_cycle(Equiv, Inflection);    
+
+        return Equiv;
+    }
+
+    # 'she herself' e=>p 'ona sama'
+    # 'for us ourselves' e=>p 'dla nas samych'
+    if(label() = "sam")
+    {
+        return pair("сам_ZP", get_morpho_ru(13,R,L,0,ptocode(P)));
+    }
+
+    if(P = "P")
+    {
+        if(Equiv = "он" or Equiv = "оно") return "его";
+        if(Equiv = "она") return "её";
+        if(Equiv = "они") return "их";
+
+        if(Equiv = "я") $f := "мой";
+        else if(Equiv = "ты") $f := "твой";
+        else if(Equiv = "мы") $f := "наш";
+        else if(Equiv = "вы") $f := "ваш";
+        else if(Equiv = "свой") $f := "свой";
+        else return Equiv;
+
+        return pair($f+"_ZP", get_morpho_ru(13,Rdz,Ldz,0,ptocode(Pdz)));
+    }
+
+    # zaimki powstałe z przetłumaczenia 'oneself', 'myself', 'yourself' etc...
+    # traktujemy specjalnie (w tłumaczeniu po prostu wychodzi forma
+    # zaimka 'się' bez względu na liczbę i rodzaj
+    if(Zwr)
+    {
+        if(P = "N" or P = "G" or P = "A" or P = "V" or P = "P")
+            return "себя";
+        if(P = "D" or P = "L")
+            return "себе";
+        if(P = "I")
+            return "собой";
+    }
+
+    if(Equiv = "я")
+    {
+         if(P = "N" or P = "V") return "я";
+         if(P = "G" or P = "A") return "меня";
+         if(P = "D" or P = "L") return "мне";
+         if(P = "I") return "мной";
+    
+         if(P = "P") 
+         {
+             return "мой";
+         }
+    }
+
+    if(Equiv = "ты")
+    {
+        if(parent()->Przyim)
+        {
+           if(P = "G" or P = "A") return "тебя";
+           if(P = "D" or P = "L") return "тебе";
+           if(P = "I") return "тобой";
+        }
+        else
+        {
+            if(P = "N" or P = "V") return "ты";
+            if(P = "G" or P = "A") return "тебя";
+            if(P = "D" or P = "L") return "тебе";
+            if(P = "I") return "тобой";
+        }
+    }
+    if(Equiv = "она")
+    {
+        if(parent()->Przyim)
+        {
+            if(P = "G" or P = "A") return "неё";
+            if(P = "D" or P = "L") return "ней";
+            if(P = "I") return "нею";
+        }
+        else
+        {
+            if(P = "N" or P = "V") return "она";
+            if(P = "G" or P = "A") return "её";
+            if(P = "D" or P = "L") return "ей";
+            if(P = "I") return "ею";
+        }
+    }
+    if(Equiv = "он")
+    {
+        if(parent()->Przyim)
+        {
+            if(P = "G" or P = "A") return "него";
+            if(P = "D") return "нему";
+            if(P = "I") return "ним";
+            if(P = "L") return "нём";
+        }
+        else
+        {
+            if(P = "N" or P = "V") return "он";
+            if(P = "G" or P = "A") return "его";
+            if(P = "D") return "ему";
+            if(P = "I") return "им";
+            if(P = "L") return "нём";
+        }
+    }
+    if(Equiv = "оно")
+    {
+        if(parent()->Przyim)
+        {
+            if(P = "G" or P = "A") return "него";
+            if(P = "D") return "нему";
+            if(P = "I") return "ним";
+            if(P = "L") return "нём";
+        }
+        else
+        {
+            if(P = "N" or P = "V") return "оно";
+            if(P = "G" or P = "A") return "его";
+            if(P = "D") return "ему";
+            if(P = "I") return "им";
+            if(P = "L") return "нём";
+        }
+    }
+    if(Equiv = "мы")
+    {
+         if(P = "N" or P = "V") return "мы";
+         if(P = "G" or P = "A" or P = "L") return "нас";
+         if(P = "D") return "нам";
+         if(P = "I") return "нами";
+    }
+    if(Equiv = "вы")
+    {
+        if(P = "N" or P = "V") return "вы";
+        if(P = "G" or P = "A" or P = "L") return "вас";
+        if(P = "D") return "вам";
+        if(P = "I") return "вами";
+    }
+    if(Equiv = "они")
+    {
+        if(parent()->Przyim)
+        {
+            if(P = "G" or P = "A" or P = "L") return "них";
+            if(P = "D") return "ним";
+            if(P = "I") return "ними";
+        }
+        else
+        {
+            if(P = "N" or P = "V") return "они";
+            if(P = "G" or P = "A") return "их";
+            if(P = "D") return "им";
+            if(P = "I") return "ими";
+            if(P = "L") return "них";
+        }
+    }
+
+    return Equiv;
+}
+
+sub UFR::propagate_case()
+{
+    # konstrukcja pseudodzierżawcza (np. "pięć drukarek")
+    # pole KPD wskazuje na liczebnik/kwantyfikator
+    $P := P;
+
+    # 'five printers' e=>p 'pięć drukarek'
+    if(((KPD := find("FLG",) or (KPD := find("LG",))) and
+       (KPD->Typ != 1 and KPD->Typ != "zg1") and
+       ((Oje and P != "D" and P != "L") or
+       (not Oje and (P = "N" or P = "A") and
+       (KPD->Typ != 2 or R = 1)))) or
+       KPD := find("FPS","kwant") or
+       (KPD := find("KWANT",) and
+       ((KPD->Typ = 5 and (P = "N" or P = "A")) or
+       KPD->Typ = r or KPD->Typ = p)) or
+       (KPD := find("ZP",) and KPD->Typ =r))
+        $P := "G";
+    else
+        KPD := 0;
+
+    # 'cat in boots' e=>p 'kot w butach'
+    if($nz := find("ZR","#") and
+       not ($nz->Equiv = "coś" or $nz->Equiv = "nic" or $nz->Equiv = "cokolwiek"))
+        $nz := null();
+
+    foreach $S
+    {
+        if($S->label() = "#" or
+           $S->cat() = "SFR" or
+           $S->cat() = "FP" and not $S->label() or
+           $S->cat() = "ZP" or
+           $S->cat() = "ZWzgl" and $S->label() != dzierżawczy or           
+           $S->cat() = "FC" and ($S->label() = ibierny or
+                 $S->label() = iczynny) or
+           $S->cat() = "FLG" or $S->cat() = "LG" or
+           ($S->cat() = "KWANT" and $S->Typ != p) or
+           $S->label() = "poosobowym" or
+           $S->label() = "dzień" or
+           $S->label() = "a" or
+           ($S->label() = "sam" and $S->cat() = "ZR"))
+        {
+            if($nz and 
+               ($S->cat() = "FP" or
+               ($S->cat() = "FC" and ($S->label() = "ibierny" or $S->label() = "iczynny"))) and 
+               (P = "N" or P = "A"))
+                    # 'you always hear when there is something wrong' e=>p 'zawsze dowiadujesz się kiedy jest coś złego'
+                    $S->P := "G";
+            else if(not KPD or
+               ($S->cat() != "FLG" and $S->cat() != "LG" and $S->cat() != "KWANT"))
+                $S->P := $P;
+            else
+                $S->P := P;
+
+            $S->propagate_case();
+        }
+
+        if($S->label() = "dopełniacz")
+        {
+            # 'my space' e=>p 'moja przestrzeń'
+            $S->Rdz := R;
+            $S->Ldz := L;
+            $S->Pdz := $P;
+            $S->propagate_poss_info();
+        }
+    }
+}
+
+sub SFR::propagate_case()
+{
+    foreach $S
+    {
+        if($S->label() = "lewy"
+           or $S->label() = "prawy"
+           or $S->cat() = "UFR"
+           or $S->cat() = "FRs"
+)
+        {
+            # 'I like neither Anna, nor Karolina' e=>p 'Nie lubię ani Anny ani Karoliny'
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+sub FRs::propagate_case()
+{
+    foreach $S
+    {
+        if($S->cat() = "UFR")
+        {
+            # 'I like neither Anna, nor Karolina' e=>p 'Nie lubię ani Anny ani Karoliny'
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+sub FP::propagate_case()
+{
+    foreach $S
+    {
+        # 'these girls are mine' e=>p 'te dziewczyny są moje'
+        if($S->label() = "#" and
+           $S->cat() = "ZR" and
+           $S->P = "P")
+        {
+            $S->Pdz := P;
+            $S->propagate_poss_info();
+        }
+        else if($S->label() = "#" or
+           $S->cat() = "SFP" or
+           $S->cat() = "ZP")
+        {
+            # 'you are stubborn' e=>p 'jesteś uparty'
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+sub P::propagate_case()
+{
+    foreach $S
+    {
+        if($S->TCat = "AJ" and
+           $S->cat() = "FP" and
+           ($S->label() = "slot1" or $S->label() = "slot2" or $S->label() = "slot3"))
+        {
+            # 'She was more hungry than playful' e=>p 'Była bardziej głodna niż swawolna'
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+
+sub SFP::propagate_case()
+{
+    foreach $S
+    {
+        if($S->label() = "lewy"
+           or $S->label() = "prawy"
+           or $S->cat() = "FP"
+           or $S->cat() = "FPs"
+)
+        {
+            # 'rich and rude child' e=>p 'bogate i niegrzeczne dziecko'
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+sub FPs::propagate_case()
+{
+    foreach $S
+    {
+        if($S->cat() = "FP")
+        {
+            # 'rich and rude child' e=>p 'bogate i niegrzeczne dziecko'
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+sub FLG::propagate_case()
+{
+    # 'five printers' e=>p 'pięć drukarek'
+    foreach $S
+    {
+        if($S->label() = "l" or
+           $S->cat() = "SFLG")
+        {
+            $S->P := P;
+            $S->propagate_case();
+        }
+    }
+}
+
+sub FC::propagate_case()
+{
+    # 'electrically powered appliance' e=>p 'urządzenie elektrycznie zasilane'
+    if((C = imiesłów_bierny or C = imiesłów_czynny or C = odsłownik) and P)
+    {
+        foreach $S
+        {
+            if($S->label() = "#")
+            {
+                $S->P := P;
+                $S->propagate_case();
+            }
+        }
+    }
+}
+
+sub ::propagate_case()
+{
+}
+
+#
+
+sub UFR::propagate_poss_info()
+{
+    foreach $S
+    {
+        if($S->label() = "#")
+        {
+            # 'the bag, which my friends don~t like' e=>p 'torba, której moi przyjaciele nie lubią'
+            $S->Rdz := Rdz;
+            $S->Ldz := Ldz;
+            $S->Pdz := Pdz;
+            $S->propagate_poss_info();
+        }
+    }
+}
+
+sub ::propagate_poss_info()
+{
+
+}
+
+#
+
+sub FC::propagate_num()
+{
+    foreach $S
+    {
+        if(($S->label() = "podmiot" and not KPD) or
+           $S->label() = "#" or $S->cat() = "Cs")
+        {
+            $S->L := L;
+            $S->propagate_num();
+            if ($S->cat() = "Cs")
+            {
+                # 'They all went quiet and looked at Jane' e=>p 'Wszyscy zamilkli i patrzeli na Jane'
+                $S->find("FC",)->L := L;
+                $S->find("FC",)->propagate_num();
+            }
+        }
+    }
+}
+
+#
+sub FC::propagate_num_rel_clause(l)
+{
+    foreach $S
+    {
+        if($S->cat() = "UFR")
+        {
+            if (($Z := $S->find("ZP",)) and $Z->Rel)
+            {
+                $S->L := $l;
+                if ($Z->find('whose',))
+                    # 'the war the anniversary of which I like' e=>p 'wojna, której rocznicę lubię'
+                    $Z->L := $l;
+                else $S->propagate_num();
+            }
+            if($S->label() = podmiot and $S->find("ZP",)->Rel)
+            {
+                # 'the magazine that would have been marketed' e=>p 'magazyn, który zostałby wprowadzony na rynek'
+                L := $l;
+                propagate_num();
+            }
+        }
+    }
+}
+
+sub UFR::propagate_num()
+{
+    foreach $S
+    {
+        if(($S->label() = "#" and $S->cat() != "SFR") or
+           $S->cat() = "FP" and not $S->label() or
+           $S->cat() = "ZP" or
+           $S->cat() = "ZWzgl" and $S->label() != dzierżawczy or
+           $S->cat() = "FC" and ($S->label() = ibierny or
+           $S->label() = iczynny) or
+           $S->cat() = "LG" and $S->Equiv = "jeden" or
+           ($S->cat() = "KWANT" and $S->Typ != p) or
+           $S->label() = "poosobowy" or
+           ($S->label() = "sam" and $S->cat() = "ZR"))
+        {
+            # 'yes' e=>p 'tak'
+            $S->L := L;
+            $S->propagate_num();
+        }
+        else if(($S->cat() = "FC" and $S->label() = względne)
+           or $S->cat() = "ZWZGL")
+        {
+            $S->propagate_num_rel_clause(L);
+        }
+        if($S->label() = "dopełniacz")
+        {
+            # 'the bag, which my friends don~t like' e=>p 'torba, której moi przyjaciele nie lubią'
+            $S->Ldz := L;
+            $S->propagate_poss_info();
+        }
+    }
+}
+
+sub FP::propagate_num()
+{
+    foreach $S
+    {
+        if($S->label() = "#" and
+           $S->cat() = "ZR" and
+           $S->P = "P")
+        {
+            # 'these girls are mine' e=>p 'te dziewczyny są moje'
+            $S->Ldz := L;
+            $S->propagate_poss_info();
+        }
+        else if($S->label() = "#" or
+           $S->cat() = "SFP" or
+           $S->cat() = "ZP")
+        {
+            # 'she is so beautiful' e=>p 'ona jest taka piękna'
+            $S->L := L;
+            $S->propagate_num();
+        }
+    }
+}
+
+sub P::propagate_num()
+{
+    foreach $S
+    {
+        # 'the girls were as cute as they make them' e=>p 'dziewczyny były słodkie jak mało kto'
+        if($S->TCat = "AJ" and
+           $S->cat() = "FP" and
+           ($S->label() = "slot1" or $S->label() = "slot2" or $S->label() = "slot3"))
+        {
+            $S->L := L;
+            $S->propagate_num();
+        }
+    }
+}
+
+
+sub SFP::propagate_num()
+{
+    foreach $S
+    {
+        if($S->label() = "lewy"
+           or $S->label() = "prawy"
+           or $S->cat() = "FP"
+           or $S->cat() = "FPs"
+        )
+        {
+            # 'rich and rude child' e=>p 'bogate i niegrzeczne dziecko'
+            $S->L := L;
+            $S->propagate_num();
+        }
+    }
+}
+
+sub FPs::propagate_num()
+{
+    foreach $S
+    {
+        if($S->cat() = "FP")
+        {
+            # 'rich and rude child' e=>p 'bogate i niegrzeczne dziecko'
+            $S->L := L;
+            $S->propagate_num();
+        }
+    }
+}
+
+sub SFR::propagate_num()
+{
+    foreach $S    
+    {
+        if($S->label() = "lewy"
+           or $S->label() = "prawy"
+           or $S->cat() = "UFR"
+           or $S->cat() = "FRs"
+           )
+        {
+            warning('UNEXPECTED: co or $S->cat() = "UFR" or $S->cat() = "FRs"');
+            $S->L := L;
+            $S->propagate_num();
+        }
+    }
+}
+
+sub FRs::propagate_num()
+{
+    foreach $S
+    {
+        if($S->cat() = "UFR")
+        {
+            warning('UNEXPECTED: co $S->cat() = "UFR"');
+            $S->L := L;
+            $S->propagate_num();
+        }
+    }
+}
+
+
+sub ::propagate_num()
+{
+}
+
+#
+
+sub FC::propagate_gender_rel_clause(r)
+{
+    foreach $S
+    {
+        if($S->cat() = "UFR")
+        {
+            if (($Z := $S->find("ZP",)) and $Z->Rel)
+            {
+                $S->R := $r;
+                if ($Z->find('whose',))
+                    # 'the war the anniversary of which I like' e=>p 'wojna, której rocznicę lubię'
+                    $Z->R := $r;
+                else
+                    $S->propagate_gender();
+            }
+            if($S->label() = podmiot and $S->find("ZP",)->Rel)
+            {
+                # 'the magazine that would have been marketed' e=>p 'magazyn, który zostałby wprowadzony na rynek'
+                R := $r;
+                propagate_gender();
+            }                        
+        }
+    }
+}
+
+sub UFR::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->cat() = "FP" and not $S->label() or
+           $S->cat() = "ZP" or
+           $S->cat() = "FC" and ($S->label() = ibierny or
+              $S->label() = iczynny) or
+           $S->cat() = "ZWzgl" and $S->label() != dzierżawczy or
+           $S->cat() = "FLG" or $S->cat() = "LG" or
+           ($S->cat() = "KWANT" and $S->Typ != p) or
+           $S->label() = "poosobowy" or
+           $S->cat() = "Cs" or
+           ($S->label() = "sam" and $S->cat() = "ZR"))
+        {
+            if(Oje and ($S->cat() = "FLG" or $S->cat() = "LG") and
+               ($S->Typ = 2 or $S->Typ = 5))
+                # 'children, six of which hated me' e=>p 'dzieci, z których sześcioro nienawidziło mnie'
+                $S->Oje := Oje;
+
+            $S->R := R;
+            $S->propagate_gender();
+        }
+        else if(($S->cat() = "FC" and $S->label() = względne)
+            or $S->cat() = "ZWZGL")
+        {
+            # 'the bag, which my friends don~t like' e=>p 'torba, której moi przyjaciele nie lubią'
+            $S->propagate_gender_rel_clause(R);
+        }
+        else if($S->cat() = "ZR" and $S->RAny)
+        {
+            # 'the girl which any of you saw' e=>p 'dziewczyna, którą którykolwiek z was zobaczył'
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    
+        if($S->label() = "dopełniacz")
+        {
+            $S->Rdz := R;
+            $S->propagate_poss_info();
+        }
+    }
+}
+
+sub FC::propagate_gender()
+{
+    %Glowa->R := R;
+    %Glowa->propagate_gender();    
+    foreach $Cs
+    {
+        if ($Cs->cat() = "Cs")
+        {
+            # 'They all went quiet and looked at Jane' e=>p 'Wszyscy zamilkli i patrzeli na Jane'
+            $Cs->find("FC",)->R := R;
+            $Cs->find("FC",)->propagate_gender();    
+        }
+    }
+}
+
+sub FP::propagate_gender()
+{
+    foreach $S
+    {    
+        if($S->label() = "#" and
+           $S->cat() = "ZR" and
+           $S->P = "P")
+        {
+            # 'these girls are mine' e=>p 'te dziewczyny są moje'
+            $S->Rdz := R;
+            $S->propagate_poss_info();
+        }
+        else if($S->label() = "#" or
+           $S->cat() = "SFP" or
+            # 'такая красивая' r=>p 'taka piękna'
+            $S->cat() = "ZP")
+        {
+            # 'she is so beautiful' e=>p 'ona jest taka piękna'
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+sub P::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->TCat = "AJ" and
+           $S->cat() = "FP" and
+           ($S->label() = "slot1" or $S->label() = "slot2" or $S->label() = "slot3"))
+        {
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+#
+sub SFP::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->label() = "lewy"
+           or $S->label() = "prawy"
+           or $S->cat() = "FP"
+           or $S->cat() = "FPs"
+       )
+        {
+            # 'rich and rude child' e=>p 'bogate i niegrzeczne dziecko'
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+sub FPs::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->cat() = "FP")
+        {
+            # 'rich and rude child' e=>p 'bogate i niegrzeczne dziecko'
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+sub FLG::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->label() = "l" or
+           $S->cat() = "SFLG")
+        {
+            # 'five printers' e=>p 'pięć drukarek'
+            if(Oje)
+                # 'children, six of which hated me' e=>p 'dzieci, z których sześcioro nienawidziło mnie' 
+                $S->Oje := Oje;
+    
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+sub SFR::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->label() = "lewy"
+           or $S->label() = "prawy"
+           or $S->cat() = "UFR"
+           or $S->cat() = "FRs"
+        )
+        {
+            warning('UNEXPECTED: co $S->label() = "lewy" .');
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+sub FRs::propagate_gender()
+{
+    foreach $S
+    {
+        if($S->cat() = "UFR")
+        {
+            warning('UNEXPECTED: co $S->cat() = "UFR" FRs');
+            $S->R := R;
+            $S->propagate_gender();
+        }
+    }
+}
+
+
+sub ::propagate_gender()
+{
+}
+
+#
+
+sub FC::propagate_person()
+{
+    %Glowa->O := O;
+    %Glowa->propagate_person();
+    foreach $Cs
+    {
+        if ($Cs->cat() = "Cs")
+        {
+            # 'They all went quiet and looked at Jane' e=>p 'Wszyscy zamilkli i patrzeli na Jane'
+            $Cs->find("FC",)->O := O;
+            $Cs->find("FC",)->propagate_person();    
+        }
+    } 
+}
+
+sub ::propagate_person()
+{
+}
+
+#
+
+sub ::noun_propagate(attr, val)
+{
+warning('UNEXPECTED: co ::noun_propagate');
+    set($attr, $val);
+}
+
+sub UFR::noun_propagate(attr, val)
+{
+    warning('UNEXPECTED: co UFR::noun_propagate');
+    set($attr, $val);
+
+    $H := find(,"#");
+    if($H)
+    {
+        warning('UNEXPECTED: co UFR::noun_propagate $H');
+        $H->noun_propagate($attr, $val);
+    }
+}
+
+sub SFPR::noun_propagate(attr, val)
+{
+    set($attr, $val);
+
+    $H := find(,"#");
+    if($H)
+    {
+        warning('UNEXPECTED: co SFPR ::noun_propagate');
+        $H->noun_propagate($attr, $val);
+    }
+}
+
+sub FPRS::noun_propagate(attr, val)
+{
+    set($attr, $val);
+
+    foreach $S
+    {
+        if($S->cat() = "FPR" or $S->cat() = "SFPR")
+        {
+            warning('UNEXPECTED: co FRPS::noun_propagate');
+            $S->noun_propagate($attr, $val);
+        }
+    }
+}
+
+
+
+#!!! TRACE ../../co/trules/shared.i
+
+#
+
+#!!! TRACE ../../co/trules/slots.t
+
+
+#
+#
+#
+#
+
+FRAG => FRAG {}
+
+#
+:slot1 => :slot1 {}
+#
+:slot2 => :slot2 {}
+#
+:slot3 => :slot3 {}
+
+sub ::tfrag(f)
+{
+    if($f and $f =~ /[^ ]/)
+    {
+        $fn := insert_right("TFRAG",);
+        $fn->Equiv := $f;
+    }
+}
+
+sub ::tslot(s,i)
+{
+    if(not $i)
+    {
+        warning("reference to a non-existining slot");
+        return 0;
+    }
+
+    $sslot := find(,"slot"+$i);
+
+    if(not $sslot)
+    {
+        warning("reference to a non-existining slot");
+        return 0;
+    }
+
+    delete($sslot,);
+
+    $sn := insert_right($sslot,);
+    $sslot->change_label("slot"+$i);
+    $sslot->TCat := $s;
+
+    set_target_info_for_slots($s,$sslot);
+}
+
+#
+#
+sub ::set_target_info_for_slots(s,sslot)
+{
+    if($s =~ /^[NGDAILV]$/)
+        # 'to hear Joanna perform live' e=>p 'słyszeć Joannę na żywo'
+        $sslot->P := $s;
+    else if($s =~ /^NUM_([NGDAIL])$/)
+        # 'a bonus of two points' e=>p 'dodatkowe dwa punkty'
+        $sslot->P := $1;
+    else if($s =~ /^ORD_([NGDAIL])$/)
+        # 'be in second gear' e=>p 'być na drugim biegu'
+        $sslot->P := $1;
+    else if($s = "TH" or $s = "TO" or $s = "IN" or $s = "RC" or $s = "BY" or
+        $s =~ /^GR_[NGDAIL]$/)
+    {
+        # 'hear it said that it~s Sunday' e=>p 'usłysz to, że jest niedziela'
+        $sslot->Typ := $s;
+        $sslot->clear("Przyim");
+        $sslot->Przyim := "";
+    }
+}    
+
+
+#
+#
+#
+sub ::getslotnb(i)
+{
+    if($i = 1)
+    {
+        if(@.Oblig1 = slot)
+            # 'a bonus of two points' e=>p 'dodatkowe dwa punkty'
+            return 1;
+
+        if(@.Oblig2 = slot)
+        {
+            warning('UNEXPECTED: getslotnb - @.Oblig2 = slot');
+            return 2;
+        }
+        if(@.Oblig3 = slot)
+        {
+            warning('UNEXPECTED: getslotnb - @.Oblig3 = slot');
+            return 3;
+        }
+    }
+    else if($i = 2)
+    {
+        if(@.Oblig1 = slot and @.Oblig2 = slot)
+            # 'the bridge connecting Old City to New City' e=>p 'most łączący Stare Miasto z Nowym Miastem'
+            return 2;
+
+        if((@.Oblig1 = slot or @.Oblig2 = slot) and @.Oblig3 = slot)
+        {
+            warning('UNEXPECTED: getslotnb - @.Oblig1 = slot or @.Oblig2 = slot) and @.Oblig3 = slot');
+            return 3;
+        }
+    }
+    else if($i = 3 and @.Oblig1 = slot and @.Oblig2 = slot and @.Oblig3 = slot)
+        # 'five and two make seven' e=>p 'pięć dodać dwa równa się siedem'
+        return 3;
+
+    return 0;
+}
+
+#
+#
+sub ::tfrags(e,i)
+{
+    # 'a bonus of two points' e=>p 'dodatkowe dwa punkty'
+    if($e =~ /^([^\$]*)\$([^\$]+)\$(.*)/)
+    {
+        tfrag($1);
+        $n := $i;
+        $c := $2;
+        $r := $3;
+        if($c =~ /^(.*)\[([123])\]$/)
+        {
+            warning('UNEXPECTED: tfrags - $c =~ /^(.*)\[([123])\]$/');
+            $c := $1;
+            $n := atoi($2);
+        }
+        tslot($c,getslotnb($n));
+        $i := $i + 1;
+        tfrags($r, $i);
+    }
+    else
+        tfrag($e);
+}
+
+#
+#
+sub ::delfrags()
+{
+    if(delete("FRAG",))
+        delfrags();
+}
+
+sub ::slots()
+{
+    if(@.Frag)
+    {
+        # 'a bonus of two points' e=>p 'dodatkowe dwa punkty'
+
+        # usuwamy fragmenty z drzewa źródłowego
+        delfrags();
+        # Equiv "rozbieramy" na fragmenty i sloty
+        tfrags(Equiv,1);
+
+        if(@.Symbol != adjective)
+            clear("Equiv");
+
+        $H := find(,"#");
+        delete($H,);
+    }
+}
+
