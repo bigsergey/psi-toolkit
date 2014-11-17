@@ -1,0 +1,13 @@
+#polish russian plain text lexicon
+
+komputer+subst компьютер+subst
+być+verb быть+verb;являться+verb
+mieć+verb иметь+verb
+dobry+adj хороший+adj;отличный+adj
+polski+adj польский+adj
+rosyjski+adj русский+adj
+zły+adj плохой+adj
+kot+subst кот+subst;кошка+subst
+tablica+subst таблица+subst;доска+subst;массив+subst
+garnek+subst кастрюля+subst;горшок+subst;банка+subst;
+tłumaczenie+subst перевод+subst
