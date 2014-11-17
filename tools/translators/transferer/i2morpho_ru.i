@@ -49,16 +49,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿BP", "M¿NP", "M¿MsP", "M¿WP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿BP", "M¿NP", "M¿MsP", "M¿WP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿BP", "M¿NP", "M¿MsP", "M¿WP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿BP", "M¿NP", "M¿MsP", "M¿WP"}
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼BP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼WP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼BP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼WP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼BP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼WP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼BP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼WP"}
 		},
 		{
-			{"X", "M¿MM", "M¿DM", "M¿CM", "M¿BM", "M¿NM", "M¿MsM", "M¿WM"},
-			{"X", "M¿MM", "M¿DM", "M¿CM", "M¿BM", "M¿NM", "M¿MsM", "M¿WM"},
-			{"X", "M¿MM", "M¿DM", "M¿CM", "M¿BM", "M¿NM", "M¿MsM", "M¿WM"},
-			{"X", "M¿MM", "M¿DM", "M¿CM", "M¿BM", "M¿NM", "M¿MsM", "M¿WM"}
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼CM", "MÅ¼BM", "MÅ¼NM", "MÅ¼MsM", "MÅ¼WM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼CM", "MÅ¼BM", "MÅ¼NM", "MÅ¼MsM", "MÅ¼WM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼CM", "MÅ¼BM", "MÅ¼NM", "MÅ¼MsM", "MÅ¼WM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼CM", "MÅ¼BM", "MÅ¼NM", "MÅ¼MsM", "MÅ¼WM"}
 		}
 	},
 	{
@@ -89,16 +89,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "¯MP", "¯DP", "¯CP", "¯BP", "¯NP", "¯MsP", "¯WP"},
-			{"X", "¯MP", "¯DP", "¯CP", "¯BP", "¯NP", "¯MsP", "¯WP"},
-			{"X", "¯MP", "¯DP", "¯CP", "¯BP", "¯NP", "¯MsP", "¯WP"},
-			{"X", "¯MP", "¯DP", "¯CP", "¯BP", "¯NP", "¯MsP", "¯WP"}
+			{"X", "Å»MP", "Å»DP", "Å»CP", "Å»BP", "Å»NP", "Å»MsP", "Å»WP"},
+			{"X", "Å»MP", "Å»DP", "Å»CP", "Å»BP", "Å»NP", "Å»MsP", "Å»WP"},
+			{"X", "Å»MP", "Å»DP", "Å»CP", "Å»BP", "Å»NP", "Å»MsP", "Å»WP"},
+			{"X", "Å»MP", "Å»DP", "Å»CP", "Å»BP", "Å»NP", "Å»MsP", "Å»WP"}
 		},
 		{
-			{"X", "¯MM", "¯DM", "¯CM", "¯BM", "¯NM", "¯MsM", "¯WM"},
-			{"X", "¯MM", "¯DM", "¯CM", "¯BM", "¯NM", "¯MsM", "¯WM"},
-			{"X", "¯MM", "¯DM", "¯CM", "¯BM", "¯NM", "¯MsM", "¯WM"},
-			{"X", "¯MM", "¯DM", "¯CM", "¯BM", "¯NM", "¯MsM", "¯WM"}
+			{"X", "Å»MM", "Å»DM", "Å»CM", "Å»BM", "Å»NM", "Å»MsM", "Å»WM"},
+			{"X", "Å»MM", "Å»DM", "Å»CM", "Å»BM", "Å»NM", "Å»MsM", "Å»WM"},
+			{"X", "Å»MM", "Å»DM", "Å»CM", "Å»BM", "Å»NM", "Å»MsM", "Å»WM"},
+			{"X", "Å»MM", "Å»DM", "Å»CM", "Å»BM", "Å»NM", "Å»MsM", "Å»WM"}
 		}
 	},
 	{
@@ -122,7 +122,7 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		}
 	}
 },
-//  przymiotniki w stopniu równym
+//  przymiotniki w stopniu rÃ³wnym
 {
 	{
 		{
@@ -172,16 +172,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿DPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"},
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿DPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"},
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿DPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"},
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿DPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"}
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼DPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"},
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼DPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"},
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼DPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"},
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼DPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"}
 		},
 		{
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"}
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"}
 		}
 	},
 	{
@@ -192,16 +192,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿MPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"},
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿MPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"},
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿MPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"},
-			{"X", "PM¿MPR", "PM¿DPR", "PM¿CPR", "PM¿MPR", "PM¿NPR", "PM¿MsPR", "PM¿MPR"}
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼MPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"},
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼MPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"},
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼MPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"},
+			{"X", "PMÅ¼MPR", "PMÅ¼DPR", "PMÅ¼CPR", "PMÅ¼MPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PMÅ¼MPR"}
 		},
 		{
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"}
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"}
 		}
 	},
 	{
@@ -212,16 +212,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "P¯MPR", "P¯DPR", "P¯DPR", "P¯BPR", "P¯BPR", "P¯DPR", "P¯MPR"},
-			{"X", "P¯MPR", "P¯DPR", "P¯DPR", "P¯BPR", "P¯BPR", "P¯DPR", "P¯MPR"},
-			{"X", "P¯MPR", "P¯DPR", "P¯DPR", "P¯BPR", "P¯BPR", "P¯DPR", "P¯MPR"},
-			{"X", "P¯MPR", "P¯DPR", "P¯DPR", "P¯BPR", "P¯BPR", "P¯DPR", "P¯MPR"}
+			{"X", "PÅ»MPR", "PÅ»DPR", "PÅ»DPR", "PÅ»BPR", "PÅ»BPR", "PÅ»DPR", "PÅ»MPR"},
+			{"X", "PÅ»MPR", "PÅ»DPR", "PÅ»DPR", "PÅ»BPR", "PÅ»BPR", "PÅ»DPR", "PÅ»MPR"},
+			{"X", "PÅ»MPR", "PÅ»DPR", "PÅ»DPR", "PÅ»BPR", "PÅ»BPR", "PÅ»DPR", "PÅ»MPR"},
+			{"X", "PÅ»MPR", "PÅ»DPR", "PÅ»DPR", "PÅ»BPR", "PÅ»BPR", "PÅ»DPR", "PÅ»MPR"}
 		},
 		{
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"}
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"}
 		}
 	},
 	{
@@ -232,16 +232,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PNMPR", "PM¿DPR", "PM¿CPR", "PNMPR", "PM¿NPR", "PM¿MsPR", "PNMPR"},
-			{"X", "PNMPR", "PM¿DPR", "PM¿CPR", "PNMPR", "PM¿NPR", "PM¿MsPR", "PNMPR"},
-			{"X", "PNMPR", "PM¿DPR", "PM¿CPR", "PNMPR", "PM¿NPR", "PM¿MsPR", "PNMPR"},
-			{"X", "PNMPR", "PM¿DPR", "PM¿CPR", "PNMPR", "PM¿NPR", "PM¿MsPR", "PNMPR"}
+			{"X", "PNMPR", "PMÅ¼DPR", "PMÅ¼CPR", "PNMPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PNMPR"},
+			{"X", "PNMPR", "PMÅ¼DPR", "PMÅ¼CPR", "PNMPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PNMPR"},
+			{"X", "PNMPR", "PMÅ¼DPR", "PMÅ¼CPR", "PNMPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PNMPR"},
+			{"X", "PNMPR", "PMÅ¼DPR", "PMÅ¼CPR", "PNMPR", "PMÅ¼NPR", "PMÅ¼MsPR", "PNMPR"}
 		},
 		{
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"},
-			{"X", "PM¿MMR", "PM¿DMR", "PM¿NPR", "PM¿MMR", "PM¿NMR", "PM¿DMR", "PM¿MMR"}
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"},
+			{"X", "PMÅ¼MMR", "PMÅ¼DMR", "PMÅ¼NPR", "PMÅ¼MMR", "PMÅ¼NMR", "PMÅ¼DMR", "PMÅ¼MMR"}
 		}
 	}
 },
@@ -302,8 +302,8 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯"},
-			{"PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯"},
+			{"PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»"},
+			{"PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»"},
 			{"PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M"}
 		}
 	},
@@ -322,8 +322,8 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯"},
-			{"PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯"},
+			{"PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»"},
+			{"PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»"},
 			{"PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M"}
 		}
 	},
@@ -336,14 +336,14 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"PP1¯", "PP1¯", "PP1¯", "PP1¯", "PP1¯", "PP1¯", "PP1¯", "PP1¯"},
-			{"PP2¯", "PP2¯", "PP2¯", "PP2¯", "PP2¯", "PP2¯", "PP2¯", "PP2¯"},
-			{"PP3¯", "PP3¯", "PP3¯", "PP3¯", "PP3¯", "PP3¯", "PP3¯", "PP3¯"}
+			{"PP1Å»", "PP1Å»", "PP1Å»", "PP1Å»", "PP1Å»", "PP1Å»", "PP1Å»", "PP1Å»"},
+			{"PP2Å»", "PP2Å»", "PP2Å»", "PP2Å»", "PP2Å»", "PP2Å»", "PP2Å»", "PP2Å»"},
+			{"PP3Å»", "PP3Å»", "PP3Å»", "PP3Å»", "PP3Å»", "PP3Å»", "PP3Å»", "PP3Å»"}
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯"},
-			{"PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯"},
+			{"PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»"},
+			{"PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»"},
 			{"PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M"}
 		}
 	},
@@ -362,13 +362,13 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯", "PM1¯"},
-			{"PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯", "PM2¯"},
+			{"PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»", "PM1Å»"},
+			{"PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»", "PM2Å»"},
 			{"PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M", "PM3M"}
 		}
 	}
 },
-//  czasowniki w czasie przysz³o-tera¼niejsze
+//  czasowniki w czasie przyszÅ‚o-teraÅºniejsze
 {
 	{
 		{
@@ -541,16 +541,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"}
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"}
 		},
 		{
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	},
 	{
@@ -561,16 +561,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿NP", "M¿MP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿NP", "M¿MP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿NP", "M¿MP"},
-			{"X", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿NP", "M¿MP"}
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼NP", "MÅ¼MP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼NP", "MÅ¼MP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼NP", "MÅ¼MP"},
+			{"X", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼NP", "MÅ¼MP"}
 		},
 		{
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	},
 	{
@@ -581,16 +581,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"},
-			{"X", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"},
-			{"X", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"},
-			{"X", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"}
+			{"X", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"},
+			{"X", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"},
+			{"X", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"},
+			{"X", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"}
 		},
 		{
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	},
 	{
@@ -601,20 +601,20 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"},
-			{"X", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"},
-			{"X", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"},
-			{"X", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"}
+			{"X", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"},
+			{"X", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"},
+			{"X", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"},
+			{"X", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"}
 		},
 		{
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"X", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"X", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	}
 },
-//  przymiotniki w stopniu wy¿szym
+//  przymiotniki w stopniu wyÅ¼szym
 {
 	{
 		{
@@ -664,16 +664,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿DPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"},
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿DPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"},
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿DPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"},
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿DPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"}
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼DPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"},
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼DPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"},
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼DPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"},
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼DPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"}
 		},
 		{
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"}
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"}
 		}
 	},
 	{
@@ -684,16 +684,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿MPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"},
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿MPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"},
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿MPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"},
-			{"X", "PM¿MPW", "PM¿DPW", "PM¿CPW", "PM¿MPW", "PM¿NPW", "PM¿MsPW", "PM¿MPW"}
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼MPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"},
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼MPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"},
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼MPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"},
+			{"X", "PMÅ¼MPW", "PMÅ¼DPW", "PMÅ¼CPW", "PMÅ¼MPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PMÅ¼MPW"}
 		},
 		{
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"}
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"}
 		}
 	},
 	{
@@ -704,16 +704,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "P¯MPW", "P¯DPW", "P¯DPW", "P¯BPW", "P¯BPW", "P¯DPW", "P¯MPW"},
-			{"X", "P¯MPW", "P¯DPW", "P¯DPW", "P¯BPW", "P¯BPW", "P¯DPW", "P¯MPW"},
-			{"X", "P¯MPW", "P¯DPW", "P¯DPW", "P¯BPW", "P¯BPW", "P¯DPW", "P¯MPW"},
-			{"X", "P¯MPW", "P¯DPW", "P¯DPW", "P¯BPW", "P¯BPW", "P¯DPW", "P¯MPW"}
+			{"X", "PÅ»MPW", "PÅ»DPW", "PÅ»DPW", "PÅ»BPW", "PÅ»BPW", "PÅ»DPW", "PÅ»MPW"},
+			{"X", "PÅ»MPW", "PÅ»DPW", "PÅ»DPW", "PÅ»BPW", "PÅ»BPW", "PÅ»DPW", "PÅ»MPW"},
+			{"X", "PÅ»MPW", "PÅ»DPW", "PÅ»DPW", "PÅ»BPW", "PÅ»BPW", "PÅ»DPW", "PÅ»MPW"},
+			{"X", "PÅ»MPW", "PÅ»DPW", "PÅ»DPW", "PÅ»BPW", "PÅ»BPW", "PÅ»DPW", "PÅ»MPW"}
 		},
 		{
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"}
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"}
 		}
 	},
 	{
@@ -724,20 +724,20 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PNMPW", "PM¿DPW", "PM¿CPW", "PNMPW", "PM¿NPW", "PM¿MsPW", "PNMPW"},
-			{"X", "PNMPW", "PM¿DPW", "PM¿CPW", "PNMPW", "PM¿NPW", "PM¿MsPW", "PNMPW"},
-			{"X", "PNMPW", "PM¿DPW", "PM¿CPW", "PNMPW", "PM¿NPW", "PM¿MsPW", "PNMPW"},
-			{"X", "PNMPW", "PM¿DPW", "PM¿CPW", "PNMPW", "PM¿NPW", "PM¿MsPW", "PNMPW"}
+			{"X", "PNMPW", "PMÅ¼DPW", "PMÅ¼CPW", "PNMPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PNMPW"},
+			{"X", "PNMPW", "PMÅ¼DPW", "PMÅ¼CPW", "PNMPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PNMPW"},
+			{"X", "PNMPW", "PMÅ¼DPW", "PMÅ¼CPW", "PNMPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PNMPW"},
+			{"X", "PNMPW", "PMÅ¼DPW", "PMÅ¼CPW", "PNMPW", "PMÅ¼NPW", "PMÅ¼MsPW", "PNMPW"}
 		},
 		{
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"},
-			{"X", "PM¿MMW", "PM¿DMW", "PM¿NPW", "PM¿MMW", "PM¿NMW", "PM¿DMW", "PM¿MMW"}
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"},
+			{"X", "PMÅ¼MMW", "PMÅ¼DMW", "PMÅ¼NPW", "PMÅ¼MMW", "PMÅ¼NMW", "PMÅ¼DMW", "PMÅ¼MMW"}
 		}
 	}
 },
-//  przymiotniki w stopniu najwy¿szym
+//  przymiotniki w stopniu najwyÅ¼szym
 {
 	{
 		{
@@ -787,16 +787,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿DPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"},
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿DPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"},
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿DPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"},
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿DPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"}
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼DPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"},
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼DPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"},
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼DPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"},
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼DPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"}
 		},
 		{
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"}
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"}
 		}
 	},
 	{
@@ -807,16 +807,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿MPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"},
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿MPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"},
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿MPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"},
-			{"X", "PM¿MPN", "PM¿DPN", "PM¿CPN", "PM¿MPN", "PM¿NPN", "PM¿MsPN", "PM¿MPN"}
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼MPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"},
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼MPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"},
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼MPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"},
+			{"X", "PMÅ¼MPN", "PMÅ¼DPN", "PMÅ¼CPN", "PMÅ¼MPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PMÅ¼MPN"}
 		},
 		{
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"}
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"}
 		}
 	},
 	{
@@ -827,16 +827,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "P¯MPN", "P¯DPN", "P¯DPN", "P¯BPN", "P¯BPN", "P¯DPN", "P¯MPN"},
-			{"X", "P¯MPN", "P¯DPN", "P¯DPN", "P¯BPN", "P¯BPN", "P¯DPN", "P¯MPN"},
-			{"X", "P¯MPN", "P¯DPN", "P¯DPN", "P¯BPN", "P¯BPN", "P¯DPN", "P¯MPN"},
-			{"X", "P¯MPN", "P¯DPN", "P¯DPN", "P¯BPN", "P¯BPN", "P¯DPN", "P¯MPN"}
+			{"X", "PÅ»MPN", "PÅ»DPN", "PÅ»DPN", "PÅ»BPN", "PÅ»BPN", "PÅ»DPN", "PÅ»MPN"},
+			{"X", "PÅ»MPN", "PÅ»DPN", "PÅ»DPN", "PÅ»BPN", "PÅ»BPN", "PÅ»DPN", "PÅ»MPN"},
+			{"X", "PÅ»MPN", "PÅ»DPN", "PÅ»DPN", "PÅ»BPN", "PÅ»BPN", "PÅ»DPN", "PÅ»MPN"},
+			{"X", "PÅ»MPN", "PÅ»DPN", "PÅ»DPN", "PÅ»BPN", "PÅ»BPN", "PÅ»DPN", "PÅ»MPN"}
 		},
 		{
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"}
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"}
 		}
 	},
 	{
@@ -847,20 +847,20 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "PNMPN", "PM¿DPN", "PM¿CPN", "PNMPN", "PM¿NPN", "PM¿MsPN", "PNMPN"},
-			{"X", "PNMPN", "PM¿DPN", "PM¿CPN", "PNMPN", "PM¿NPN", "PM¿MsPN", "PNMPN"},
-			{"X", "PNMPN", "PM¿DPN", "PM¿CPN", "PNMPN", "PM¿NPN", "PM¿MsPN", "PNMPN"},
-			{"X", "PNMPN", "PM¿DPN", "PM¿CPN", "PNMPN", "PM¿NPN", "PM¿MsPN", "PNMPN"}
+			{"X", "PNMPN", "PMÅ¼DPN", "PMÅ¼CPN", "PNMPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PNMPN"},
+			{"X", "PNMPN", "PMÅ¼DPN", "PMÅ¼CPN", "PNMPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PNMPN"},
+			{"X", "PNMPN", "PMÅ¼DPN", "PMÅ¼CPN", "PNMPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PNMPN"},
+			{"X", "PNMPN", "PMÅ¼DPN", "PMÅ¼CPN", "PNMPN", "PMÅ¼NPN", "PMÅ¼MsPN", "PNMPN"}
 		},
 		{
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"},
-			{"X", "PM¿MMN", "PM¿DMN", "PM¿NPN", "PM¿MMN", "PM¿NMN", "PM¿DMN", "PM¿MMN"}
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"},
+			{"X", "PMÅ¼MMN", "PMÅ¼DMN", "PMÅ¼NPN", "PMÅ¼MMN", "PMÅ¼NMN", "PMÅ¼DMN", "PMÅ¼MMN"}
 		}
 	}
 },
-//  czasowniki w trybie przypuszczaj±cym
+//  czasowniki w trybie przypuszczajÄ…cym
 {
 	{
 		{
@@ -917,8 +917,8 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯"},
-			{"CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯"},
+			{"CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»"},
+			{"CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»"},
 			{"CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M"}
 		}
 	},
@@ -937,8 +937,8 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯"},
-			{"CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯"},
+			{"CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»"},
+			{"CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»"},
 			{"CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M"}
 		}
 	},
@@ -951,14 +951,14 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"CP1¯", "CP1¯", "CP1¯", "CP1¯", "CP1¯", "CP1¯", "CP1¯", "CP1¯"},
-			{"CP2¯", "CP2¯", "CP2¯", "CP2¯", "CP2¯", "CP2¯", "CP2¯", "CP2¯"},
-			{"CP3¯", "CP3¯", "CP3¯", "CP3¯", "CP3¯", "CP3¯", "CP3¯", "CP3¯"}
+			{"CP1Å»", "CP1Å»", "CP1Å»", "CP1Å»", "CP1Å»", "CP1Å»", "CP1Å»", "CP1Å»"},
+			{"CP2Å»", "CP2Å»", "CP2Å»", "CP2Å»", "CP2Å»", "CP2Å»", "CP2Å»", "CP2Å»"},
+			{"CP3Å»", "CP3Å»", "CP3Å»", "CP3Å»", "CP3Å»", "CP3Å»", "CP3Å»", "CP3Å»"}
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯"},
-			{"CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯"},
+			{"CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»"},
+			{"CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»"},
 			{"CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M"}
 		}
 	},
@@ -977,13 +977,13 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"X", "X", "X", "X", "X", "X", "X", "X"},
-			{"CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯", "CM1¯"},
-			{"CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯", "CM2¯"},
+			{"CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»", "CM1Å»"},
+			{"CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»", "CM2Å»"},
 			{"CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M", "CM3M"}
 		}
 	}
 },
-//  liczebniki g³ówne
+//  liczebniki gÅ‚Ã³wne
 {
 	{
 		{
@@ -1229,7 +1229,7 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		}
 	}
 },
-//  imies³ów bierny
+//  imiesÅ‚Ã³w bierny
 {
 	{
 		{
@@ -1279,16 +1279,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿DP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"},
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿DP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"},
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿DP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"},
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿DP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"}
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼DP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"},
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼DP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"},
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼DP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"},
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼DP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"}
 		},
 		{
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"}
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"}
 		}
 	},
 	{
@@ -1299,16 +1299,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿MP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"},
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿MP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"},
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿MP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"},
-			{"X", "IBRM¿MP", "IBRM¿DP", "IBRM¿CP", "IBRM¿MP", "IBRM¿NP", "IBRM¿MsP", "IBRM¿MP"}
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼MP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"},
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼MP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"},
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼MP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"},
+			{"X", "IBRMÅ¼MP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRMÅ¼MP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRMÅ¼MP"}
 		},
 		{
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"}
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"}
 		}
 	},
 	{
@@ -1319,16 +1319,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "IBR¯MP", "IBR¯DP", "IBR¯DP", "IBR¯BP", "IBR¯BP", "IBR¯DP", "IBR¯MP"},
-			{"X", "IBR¯MP", "IBR¯DP", "IBR¯DP", "IBR¯BP", "IBR¯BP", "IBR¯DP", "IBR¯MP"},
-			{"X", "IBR¯MP", "IBR¯DP", "IBR¯DP", "IBR¯BP", "IBR¯BP", "IBR¯DP", "IBR¯MP"},
-			{"X", "IBR¯MP", "IBR¯DP", "IBR¯DP", "IBR¯BP", "IBR¯BP", "IBR¯DP", "IBR¯MP"}
+			{"X", "IBRÅ»MP", "IBRÅ»DP", "IBRÅ»DP", "IBRÅ»BP", "IBRÅ»BP", "IBRÅ»DP", "IBRÅ»MP"},
+			{"X", "IBRÅ»MP", "IBRÅ»DP", "IBRÅ»DP", "IBRÅ»BP", "IBRÅ»BP", "IBRÅ»DP", "IBRÅ»MP"},
+			{"X", "IBRÅ»MP", "IBRÅ»DP", "IBRÅ»DP", "IBRÅ»BP", "IBRÅ»BP", "IBRÅ»DP", "IBRÅ»MP"},
+			{"X", "IBRÅ»MP", "IBRÅ»DP", "IBRÅ»DP", "IBRÅ»BP", "IBRÅ»BP", "IBRÅ»DP", "IBRÅ»MP"}
 		},
 		{
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"}
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"}
 		}
 	},
 	{
@@ -1339,20 +1339,20 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"X", "X", "X", "X", "X", "X", "X", "X"}
 		},
 		{
-			{"X", "IBRNMP", "IBRM¿DP", "IBRM¿CP", "IBRNMP", "IBRM¿NP", "IBRM¿MsP", "IBRNMP"},
-			{"X", "IBRNMP", "IBRM¿DP", "IBRM¿CP", "IBRNMP", "IBRM¿NP", "IBRM¿MsP", "IBRNMP"},
-			{"X", "IBRNMP", "IBRM¿DP", "IBRM¿CP", "IBRNMP", "IBRM¿NP", "IBRM¿MsP", "IBRNMP"},
-			{"X", "IBRNMP", "IBRM¿DP", "IBRM¿CP", "IBRNMP", "IBRM¿NP", "IBRM¿MsP", "IBRNMP"}
+			{"X", "IBRNMP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRNMP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRNMP"},
+			{"X", "IBRNMP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRNMP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRNMP"},
+			{"X", "IBRNMP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRNMP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRNMP"},
+			{"X", "IBRNMP", "IBRMÅ¼DP", "IBRMÅ¼CP", "IBRNMP", "IBRMÅ¼NP", "IBRMÅ¼MsP", "IBRNMP"}
 		},
 		{
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"},
-			{"X", "IBRM¿MM", "IBRM¿DM", "IBRM¿NP", "IBRM¿MM", "IBRM¿NM", "IBRM¿DM", "IBRM¿MM"}
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"},
+			{"X", "IBRMÅ¼MM", "IBRMÅ¼DM", "IBRMÅ¼NP", "IBRMÅ¼MM", "IBRMÅ¼NM", "IBRMÅ¼DM", "IBRMÅ¼MM"}
 		}
 	}
 },
-//  imies³ów czynny
+//  imiesÅ‚Ã³w czynny
 {
 	{
 		{
@@ -1402,16 +1402,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿DP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"},
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿DP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"},
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿DP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"},
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿DP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"}
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼DP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"},
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼DP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"},
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼DP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"},
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼DP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"}
 		},
 		{
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"}
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"}
 		}
 	},
 	{
@@ -1422,16 +1422,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿MP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"},
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿MP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"},
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿MP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"},
-			{"", "ICZM¿MP", "ICZM¿DP", "ICZM¿CP", "ICZM¿MP", "ICZM¿NP", "ICZM¿MsP", "ICZM¿MP"}
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼MP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"},
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼MP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"},
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼MP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"},
+			{"", "ICZMÅ¼MP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZMÅ¼MP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZMÅ¼MP"}
 		},
 		{
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"}
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"}
 		}
 	},
 	{
@@ -1442,16 +1442,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICZ¯MP", "ICZ¯DP", "ICZ¯DP", "ICZ¯BP", "ICZ¯BP", "ICZ¯DP", "ICZ¯MP"},
-			{"", "ICZ¯MP", "ICZ¯DP", "ICZ¯DP", "ICZ¯BP", "ICZ¯BP", "ICZ¯DP", "ICZ¯MP"},
-			{"", "ICZ¯MP", "ICZ¯DP", "ICZ¯DP", "ICZ¯BP", "ICZ¯BP", "ICZ¯DP", "ICZ¯MP"},
-			{"", "ICZ¯MP", "ICZ¯DP", "ICZ¯DP", "ICZ¯BP", "ICZ¯BP", "ICZ¯DP", "ICZ¯MP"}
+			{"", "ICZÅ»MP", "ICZÅ»DP", "ICZÅ»DP", "ICZÅ»BP", "ICZÅ»BP", "ICZÅ»DP", "ICZÅ»MP"},
+			{"", "ICZÅ»MP", "ICZÅ»DP", "ICZÅ»DP", "ICZÅ»BP", "ICZÅ»BP", "ICZÅ»DP", "ICZÅ»MP"},
+			{"", "ICZÅ»MP", "ICZÅ»DP", "ICZÅ»DP", "ICZÅ»BP", "ICZÅ»BP", "ICZÅ»DP", "ICZÅ»MP"},
+			{"", "ICZÅ»MP", "ICZÅ»DP", "ICZÅ»DP", "ICZÅ»BP", "ICZÅ»BP", "ICZÅ»DP", "ICZÅ»MP"}
 		},
 		{
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"}
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"}
 		}
 	},
 	{
@@ -1462,20 +1462,20 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICZNMP", "ICZM¿DP", "ICZM¿CP", "ICZNMP", "ICZM¿NP", "ICZM¿MsP", "ICZNMP"},
-			{"", "ICZNMP", "ICZM¿DP", "ICZM¿CP", "ICZNMP", "ICZM¿NP", "ICZM¿MsP", "ICZNMP"},
-			{"", "ICZNMP", "ICZM¿DP", "ICZM¿CP", "ICZNMP", "ICZM¿NP", "ICZM¿MsP", "ICZNMP"},
-			{"", "ICZNMP", "ICZM¿DP", "ICZM¿CP", "ICZNMP", "ICZM¿NP", "ICZM¿MsP", "ICZNMP"}
+			{"", "ICZNMP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZNMP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZNMP"},
+			{"", "ICZNMP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZNMP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZNMP"},
+			{"", "ICZNMP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZNMP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZNMP"},
+			{"", "ICZNMP", "ICZMÅ¼DP", "ICZMÅ¼CP", "ICZNMP", "ICZMÅ¼NP", "ICZMÅ¼MsP", "ICZNMP"}
 		},
 		{
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"},
-			{"", "ICZM¿MM", "ICZM¿DM", "ICZM¿NP", "ICZM¿MM", "ICZM¿NM", "ICZM¿DM", "ICZM¿MM"}
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"},
+			{"", "ICZMÅ¼MM", "ICZMÅ¼DM", "ICZMÅ¼NP", "ICZMÅ¼MM", "ICZMÅ¼NM", "ICZMÅ¼DM", "ICZMÅ¼MM"}
 		}
 	}
 },
-//  ods³ownik
+//  odsÅ‚ownik
 {
 	{
 		{
@@ -1648,16 +1648,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿DP", "M¿NP", "M¿MsP", "M¿MP"}
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼DP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"}
 		},
 		{
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	},
 	{
@@ -1668,16 +1668,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿MsP", "M¿MP"},
-			{"", "M¿MP", "M¿DP", "M¿CP", "M¿MP", "M¿NP", "M¿MsP", "M¿MP"}
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"},
+			{"", "MÅ¼MP", "MÅ¼DP", "MÅ¼CP", "MÅ¼MP", "MÅ¼NP", "MÅ¼MsP", "MÅ¼MP"}
 		},
 		{
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	},
 	{
@@ -1688,16 +1688,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"},
-			{"", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"},
-			{"", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"},
-			{"", "¯MP", "¯DP", "¯DP", "¯BP", "¯BP", "¯DP", "¯MP"}
+			{"", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"},
+			{"", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"},
+			{"", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"},
+			{"", "Å»MP", "Å»DP", "Å»DP", "Å»BP", "Å»BP", "Å»DP", "Å»MP"}
 		},
 		{
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	},
 	{
@@ -1708,16 +1708,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"},
-			{"", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"},
-			{"", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"},
-			{"", "NMP", "M¿DP", "M¿CP", "NMP", "M¿NP", "M¿MsP", "NMP"}
+			{"", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"},
+			{"", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"},
+			{"", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"},
+			{"", "NMP", "MÅ¼DP", "MÅ¼CP", "NMP", "MÅ¼NP", "MÅ¼MsP", "NMP"}
 		},
 		{
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"},
-			{"", "M¿MM", "M¿DM", "M¿NP", "M¿MM", "M¿NM", "M¿DM", "M¿MM"}
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"},
+			{"", "MÅ¼MM", "MÅ¼DM", "MÅ¼NP", "MÅ¼MM", "MÅ¼NM", "MÅ¼DM", "MÅ¼MM"}
 		}
 	}
 },
@@ -1778,9 +1778,9 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"", "", "", "", "", "", "", ""},
-			{"MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯"},
-			{"MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯"},
-			{"MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯"}
+			{"MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»"},
+			{"MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»"},
+			{"MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»"}
 		}
 	},
 	{
@@ -1798,9 +1798,9 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"", "", "", "", "", "", "", ""},
-			{"MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯"},
-			{"MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯"},
-			{"MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯"}
+			{"MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»"},
+			{"MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»"},
+			{"MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»"}
 		}
 	},
 	{
@@ -1812,15 +1812,15 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"", "", "", "", "", "", "", ""},
-			{"MP1¯", "MP1¯", "MP1¯", "MP1¯", "MP1¯", "MP1¯", "MP1¯", "MP1¯"},
-			{"MP2¯", "MP2¯", "MP2¯", "MP2¯", "MP2¯", "MP2¯", "MP2¯", "MP2¯"},
-			{"MP3¯", "MP3¯", "MP3¯", "MP3¯", "MP3¯", "MP3¯", "MP3¯", "MP3¯"}
+			{"MP1Å»", "MP1Å»", "MP1Å»", "MP1Å»", "MP1Å»", "MP1Å»", "MP1Å»", "MP1Å»"},
+			{"MP2Å»", "MP2Å»", "MP2Å»", "MP2Å»", "MP2Å»", "MP2Å»", "MP2Å»", "MP2Å»"},
+			{"MP3Å»", "MP3Å»", "MP3Å»", "MP3Å»", "MP3Å»", "MP3Å»", "MP3Å»", "MP3Å»"}
 		},
 		{
 			{"", "", "", "", "", "", "", ""},
-			{"MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯"},
-			{"MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯"},
-			{"MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯"}
+			{"MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»"},
+			{"MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»"},
+			{"MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»"}
 		}
 	},
 	{
@@ -1838,13 +1838,13 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		},
 		{
 			{"", "", "", "", "", "", "", ""},
-			{"MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯", "MM1¯"},
-			{"MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯", "MM2¯"},
-			{"MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯", "MM3¯"}
+			{"MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»", "MM1Å»"},
+			{"MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»", "MM2Å»"},
+			{"MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»", "MM3Å»"}
 		}
 	}
 },
-//  spójniki
+//  spÃ³jniki
 {
 	{
 		{
@@ -1967,7 +1967,7 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		}
 	}
 },
-//  czas przysz³y (bêdê)
+//  czas przyszÅ‚y (bÄ™dÄ™)
 {
 	{
 		{
@@ -2090,7 +2090,7 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 		}
 	}
 },
-//  imies³ów czynny przesz³y
+//  imiesÅ‚Ã³w czynny przeszÅ‚y
 {
 	{
 		{
@@ -2140,16 +2140,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿DP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"},
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿DP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"},
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿DP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"},
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿DP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"}
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼DP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"},
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼DP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"},
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼DP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"},
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼DP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"}
 		},
 		{
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"}
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"}
 		}
 	},
 	{
@@ -2160,16 +2160,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿MP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"},
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿MP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"},
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿MP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"},
-			{"", "ICPM¿MP", "ICPM¿DP", "ICPM¿CP", "ICPM¿MP", "ICPM¿NP", "ICPM¿MsP", "ICPM¿MP"}
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼MP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"},
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼MP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"},
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼MP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"},
+			{"", "ICPMÅ¼MP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPMÅ¼MP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPMÅ¼MP"}
 		},
 		{
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"}
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"}
 		}
 	},
 	{
@@ -2180,16 +2180,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICP¯MP", "ICP¯DP", "ICP¯DP", "ICP¯BP", "ICP¯BP", "ICP¯DP", "ICP¯MP"},
-			{"", "ICP¯MP", "ICP¯DP", "ICP¯DP", "ICP¯BP", "ICP¯BP", "ICP¯DP", "ICP¯MP"},
-			{"", "ICP¯MP", "ICP¯DP", "ICP¯DP", "ICP¯BP", "ICP¯BP", "ICP¯DP", "ICP¯MP"},
-			{"", "ICP¯MP", "ICP¯DP", "ICP¯DP", "ICP¯BP", "ICP¯BP", "ICP¯DP", "ICP¯MP"}
+			{"", "ICPÅ»MP", "ICPÅ»DP", "ICPÅ»DP", "ICPÅ»BP", "ICPÅ»BP", "ICPÅ»DP", "ICPÅ»MP"},
+			{"", "ICPÅ»MP", "ICPÅ»DP", "ICPÅ»DP", "ICPÅ»BP", "ICPÅ»BP", "ICPÅ»DP", "ICPÅ»MP"},
+			{"", "ICPÅ»MP", "ICPÅ»DP", "ICPÅ»DP", "ICPÅ»BP", "ICPÅ»BP", "ICPÅ»DP", "ICPÅ»MP"},
+			{"", "ICPÅ»MP", "ICPÅ»DP", "ICPÅ»DP", "ICPÅ»BP", "ICPÅ»BP", "ICPÅ»DP", "ICPÅ»MP"}
 		},
 		{
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"}
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"}
 		}
 	},
 	{
@@ -2200,20 +2200,20 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "ICPNMP", "ICPM¿DP", "ICPM¿CP", "ICPNMP", "ICPM¿NP", "ICPM¿MsP", "ICPNMP"},
-			{"", "ICPNMP", "ICPM¿DP", "ICPM¿CP", "ICPNMP", "ICPM¿NP", "ICPM¿MsP", "ICPNMP"},
-			{"", "ICPNMP", "ICPM¿DP", "ICPM¿CP", "ICPNMP", "ICPM¿NP", "ICPM¿MsP", "ICPNMP"},
-			{"", "ICPNMP", "ICPM¿DP", "ICPM¿CP", "ICPNMP", "ICPM¿NP", "ICPM¿MsP", "ICPNMP"}
+			{"", "ICPNMP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPNMP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPNMP"},
+			{"", "ICPNMP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPNMP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPNMP"},
+			{"", "ICPNMP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPNMP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPNMP"},
+			{"", "ICPNMP", "ICPMÅ¼DP", "ICPMÅ¼CP", "ICPNMP", "ICPMÅ¼NP", "ICPMÅ¼MsP", "ICPNMP"}
 		},
 		{
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"},
-			{"", "ICPM¿MM", "ICPM¿DM", "ICPM¿NP", "ICPM¿MM", "ICPM¿NM", "ICPM¿DM", "ICPM¿MM"}
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"},
+			{"", "ICPMÅ¼MM", "ICPMÅ¼DM", "ICPMÅ¼NP", "ICPMÅ¼MM", "ICPMÅ¼NM", "ICPMÅ¼DM", "ICPMÅ¼MM"}
 		}
 	}
 },
-//  imies³ów bierny tera¼niejszy
+//  imiesÅ‚Ã³w bierny teraÅºniejszy
 {
 	{
 		{
@@ -2263,16 +2263,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿DP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"},
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿DP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"},
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿DP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"},
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿DP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"}
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼DP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"},
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼DP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"},
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼DP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"},
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼DP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"}
 		},
 		{
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"}
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"}
 		}
 	},
 	{
@@ -2283,16 +2283,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿MP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"},
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿MP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"},
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿MP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"},
-			{"", "IBTM¿MP", "IBTM¿DP", "IBTM¿CP", "IBTM¿MP", "IBTM¿NP", "IBTM¿MsP", "IBTM¿MP"}
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼MP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"},
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼MP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"},
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼MP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"},
+			{"", "IBTMÅ¼MP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTMÅ¼MP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTMÅ¼MP"}
 		},
 		{
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"}
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"}
 		}
 	},
 	{
@@ -2303,16 +2303,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "IBT¯MP", "IBT¯DP", "IBT¯DP", "IBT¯BP", "IBT¯BP", "IBT¯DP", "IBT¯MP"},
-			{"", "IBT¯MP", "IBT¯DP", "IBT¯DP", "IBT¯BP", "IBT¯BP", "IBT¯DP", "IBT¯MP"},
-			{"", "IBT¯MP", "IBT¯DP", "IBT¯DP", "IBT¯BP", "IBT¯BP", "IBT¯DP", "IBT¯MP"},
-			{"", "IBT¯MP", "IBT¯DP", "IBT¯DP", "IBT¯BP", "IBT¯BP", "IBT¯DP", "IBT¯MP"}
+			{"", "IBTÅ»MP", "IBTÅ»DP", "IBTÅ»DP", "IBTÅ»BP", "IBTÅ»BP", "IBTÅ»DP", "IBTÅ»MP"},
+			{"", "IBTÅ»MP", "IBTÅ»DP", "IBTÅ»DP", "IBTÅ»BP", "IBTÅ»BP", "IBTÅ»DP", "IBTÅ»MP"},
+			{"", "IBTÅ»MP", "IBTÅ»DP", "IBTÅ»DP", "IBTÅ»BP", "IBTÅ»BP", "IBTÅ»DP", "IBTÅ»MP"},
+			{"", "IBTÅ»MP", "IBTÅ»DP", "IBTÅ»DP", "IBTÅ»BP", "IBTÅ»BP", "IBTÅ»DP", "IBTÅ»MP"}
 		},
 		{
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"}
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"}
 		}
 	},
 	{
@@ -2323,16 +2323,16 @@ static const char* i2morpho_ru[19][6][3][4][8] = {
 			{"", "", "", "", "", "", "", ""}
 		},
 		{
-			{"", "IBTNMP", "IBTM¿DP", "IBTM¿CP", "IBTNMP", "IBTM¿NP", "IBTM¿MsP", "IBTNMP"},
-			{"", "IBTNMP", "IBTM¿DP", "IBTM¿CP", "IBTNMP", "IBTM¿NP", "IBTM¿MsP", "IBTNMP"},
-			{"", "IBTNMP", "IBTM¿DP", "IBTM¿CP", "IBTNMP", "IBTM¿NP", "IBTM¿MsP", "IBTNMP"},
-			{"", "IBTNMP", "IBTM¿DP", "IBTM¿CP", "IBTNMP", "IBTM¿NP", "IBTM¿MsP", "IBTNMP"}
+			{"", "IBTNMP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTNMP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTNMP"},
+			{"", "IBTNMP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTNMP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTNMP"},
+			{"", "IBTNMP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTNMP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTNMP"},
+			{"", "IBTNMP", "IBTMÅ¼DP", "IBTMÅ¼CP", "IBTNMP", "IBTMÅ¼NP", "IBTMÅ¼MsP", "IBTNMP"}
 		},
 		{
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"},
-			{"", "IBTM¿MM", "IBTM¿DM", "IBTM¿NP", "IBTM¿MM", "IBTM¿NM", "IBTM¿DM", "IBTM¿MM"}
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"},
+			{"", "IBTMÅ¼MM", "IBTMÅ¼DM", "IBTMÅ¼NP", "IBTMÅ¼MM", "IBTMÅ¼NM", "IBTMÅ¼DM", "IBTMÅ¼MM"}
 		}
 	}
 }
