@@ -53,7 +53,7 @@ Compilation procedure
    cd psi-toolkit
    mkdir -p build
    cd build
-   cmake ../ -DUSE_JAVA=OFF .. # <- note dots here
+   cmake -DUSE_JAVA=OFF .. # <- note dots here
    # or cmake -DUSE_JAVA=ON if morfologik is needed
    # if problem with JAVA PATH occurs try forcing dirs by: cmake -DUSE_JAVA=ON -DJAVA_INCLUDE_PATH2=/usr/lib/jvm/java-7-openjdk-amd64/include/linux/ -DJAVA_INCLUDE_PATH=/usr/lib/jvm/java-7-openjdk-amd64/include/ .. (remember to use correct java folder in command)
    make
@@ -122,7 +122,7 @@ Installation procedure
     cd psi-toolkit
     mkdir -p build
     cd build
-    cmake ../ -DCMAKE_INSTALL_PREFIX=/usr/local -DUSE_JAVA=ON -DIS_INSTALLABLE=ON CMAKE_BUILD_TYPE=Release ..
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DUSE_JAVA=ON -DIS_INSTALLABLE=ON CMAKE_BUILD_TYPE=Release ..
     make
 
 And as root:
