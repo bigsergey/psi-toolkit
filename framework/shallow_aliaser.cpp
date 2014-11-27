@@ -49,8 +49,8 @@ std::map<std::string, std::string> ShallowAliaser::ALIASES =
             " --lang pl --trg-lang en")
         ("translate-ples",  "gobio --lang pl ! bilexicon --lang pl --trg-lang es ! transferer"
             " --lang pl --trg-lang es")
-        ("translate-plru",  "gobio --lang pl ! bilexicon --lang pl --trg-lang ru --plain-text-lexicon ../tools/lexica/bilexicon/t/plru.txt ! transferer"
-            " --lang pl --tgr-lang ru")
+        ("translate-plru",  "gobio --lang pl ! bilexicon --lang pl --trg-lang ru ! transferer"
+            " --lang pl --trg-lang ru")
         ;
 
 
