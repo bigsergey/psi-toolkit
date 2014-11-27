@@ -19,7 +19,7 @@
   <configuration
       name="generate-lexdb-forms-ru"
       annotator="mapper"
-      options="--lang pl --in-tags form --out-tags token --consider-text --consider-category --clone-attributes --plain %ITSDATA%/ru-lexdb-generation-forms.txt"
+      options="--lang pl --in-tags form --out-tags token --consider-text --consider-category --clone-attributes --plain %ITSDATA%/ru-lexdb-generation-forms.txt --unknown-clone-attributes --unknown-clone-text"
       description="A lexicon of lexdb forms for Russian.">
     <provided>
     </provided>
