@@ -1,3 +1,5 @@
-subst rzeczownik
-verb czasownik
-adj przymiotnik
+компьютер\_R,MnBP компьютер
+хороший\_P,MnBP хороший
+компьютер\_R,MnMP компьютер
+хороший\_P,MnMP хороший
+иметь\_C,OP1 имею
