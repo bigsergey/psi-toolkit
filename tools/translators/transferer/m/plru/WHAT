@@ -1,0 +1,1 @@
+--line-by-line gobio --lang pl ! bilexicon --lang pl --trg-lang ru ! transferer --lang pl --trg-lang ru
